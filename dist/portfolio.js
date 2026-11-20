@@ -21,6 +21,34 @@ dialog.addEventListener("click", (event) => {
 });
 
 const navLinks = [...document.querySelectorAll(".navigation a")];
+const menuToggle = document.querySelector(".menu-toggle");
+const headerMenu = document.querySelector("#header-menu");
+
+function closeNavigation() {
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation");
+}
+
+menuToggle.addEventListener("click", () => {
+  const open = menuToggle.getAttribute("aria-expanded") !== "true";
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+});
+
+headerMenu.addEventListener("click", (event) => {
+  if (event.target.closest("a, button")) closeNavigation();
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".site-header")) closeNavigation();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    closeNavigation();
+    menuToggle.focus();
+  }
+});
 
 function highlightNavigation() {
   const hash = location.hash === "#projects" ? "#work" : location.hash || "#home";

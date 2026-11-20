@@ -75,6 +75,8 @@ img { display: block; max-width: 100%; height: auto; }
 .navigation a[aria-current], .navigation a:hover, .navigation button:hover { color: var(--brass); }
 .navigation a[aria-current]::after { position: absolute; inset: auto 0 .1rem; height: 2px; background: currentColor; content: ""; }
 .nav-contact { justify-self: end; }
+.header-menu { display: contents; }
+.menu-toggle { display: none; }
 
 .hero {
   position: relative;
@@ -371,17 +373,27 @@ img { display: block; max-width: 100%; height: auto; }
 
 @media (max-width: 52rem) {
   :root {
-    --nav-height: 6.75rem;
+    --nav-height: 4.5rem;
     --display: 2.25rem;
     --section-title: 2.25rem;
     --card-title: 2rem;
   }
   .hero h1, .work-intro h2, .method h2, .contact h2, .detail-dialog h2 { font-size: 2.25rem; }
   .project-process h3, .step-title { font-size: 2.125rem; }
-  .site-header { grid-template-columns: auto minmax(0, 1fr) auto; gap: .25rem .55rem; padding-block: .6rem .4rem; }
+  .site-header { grid-template-columns: 1fr auto; padding-block: .6rem; }
   .header-rule { display: none; }
-  .navigation { grid-column: 1 / -1; grid-row: 2; flex-wrap: wrap; justify-content: space-between; max-width: 35rem; width: 100%; }
-  .nav-contact { grid-column: 3; grid-row: 1; }
+  .menu-toggle { display: grid; align-content: center; justify-items: center; gap: 5px; width: 44px; height: 44px; color: var(--brass); }
+  .menu-toggle span { width: 24px; height: 2px; background: currentColor; transition: transform 180ms, opacity 180ms; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+  .header-menu { display: none; position: absolute; top: calc(100% + .25rem); right: 0; width: min(100%, 22rem); padding: 1rem 1.25rem 1.25rem; border: 1px solid #c9a46055; border-radius: .75rem; background: var(--hero-ground); box-shadow: 0 1rem 2rem #0005; }
+  .menu-toggle[aria-expanded="true"] + .header-menu { display: grid; gap: .85rem; }
+  .navigation { flex-direction: column; align-items: stretch; gap: .25rem; width: 100%; }
+  .navigation a, .navigation button { text-align: left; }
+  .navigation a[aria-current]::after { right: auto; width: 2rem; }
+  .nav-contact { justify-self: stretch; }
+  .skill-controls { display: none; }
   .hero { display: flex; flex-direction: column; align-items: stretch; }
   .hero-copy { order: -1; padding-block: 1.15rem 0; }
   .hero-gallery {
