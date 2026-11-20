@@ -105,7 +105,6 @@ img { display: block; max-width: 100%; height: auto; }
 .hero-mobile-scene { display: none; }
 .hero-copy { position: relative; padding-block: clamp(1.15rem, 2.15vw, 2.75rem) 1.85rem; }
 .kicker { font: 650 var(--label-size)/1.35 var(--sans); letter-spacing: .155em; text-transform: uppercase; }
-.hero-name { margin-bottom: .65rem; font-size: .8125rem; letter-spacing: .23em; }
 .hero h1 { max-width: max-content; font-size: var(--display); line-height: .91; letter-spacing: -.011em; }
 .hero em, .contact em { color: var(--brass); }
 .hero-lead { max-width: min(29rem, 42%); margin-top: .88rem; color: #ebe5d9; font-size: clamp(1.025rem, 1.18vw, 1.15rem); line-height: 1.5; }
@@ -387,12 +386,14 @@ img { display: block; max-width: 100%; height: auto; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
-  .header-menu { display: none; position: absolute; top: calc(100% + .25rem); right: 0; width: min(100%, 22rem); padding: 1rem 1.25rem 1.25rem; border: 1px solid #c9a46055; border-radius: .75rem; background: var(--hero-ground); box-shadow: 0 1rem 2rem #0005; }
+  .header-menu { display: none; position: absolute; top: calc(100% + .25rem); right: 0; width: min(100%, 22rem); padding: 1rem 1.25rem 1.25rem; border: 1px solid #fff5; border-radius: .75rem; background: #000; color: #fff; box-shadow: 0 1rem 2rem #0005; }
   .menu-toggle[aria-expanded="true"] + .header-menu { display: grid; gap: .85rem; }
   .navigation { flex-direction: column; align-items: stretch; gap: .25rem; width: 100%; }
   .navigation a, .navigation button { text-align: left; }
+  .navigation > * + * { border-top: 1px solid #fff; }
   .navigation a[aria-current]::after { right: auto; width: 2rem; }
-  .nav-contact { justify-self: stretch; }
+  .nav-contact { justify-self: stretch; border-color: #fff; color: #fff; }
+  .menu-toggle { color: #fff; }
   .skill-controls { display: none; }
   .hero { display: flex; flex-direction: column; align-items: stretch; }
   .hero-copy { order: -1; padding-block: 1.15rem 0; }
@@ -430,7 +431,8 @@ img { display: block; max-width: 100%; height: auto; }
 
 @media (max-width: 42rem) {
   .projects { grid-template-columns: minmax(0, 1fr); }
-  .project, .project-process { min-height: 24rem; }
+  .project { min-height: 16rem; }
+  .project-process { min-height: 24rem; }
   .project-process { grid-column: auto; }
 }
 
