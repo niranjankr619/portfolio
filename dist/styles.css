@@ -422,7 +422,8 @@ img { display: block; max-width: 100%; height: auto; }
 
 @media (max-width: 42rem) {
   .projects { grid-template-columns: minmax(0, 1fr); }
-  .project-process { grid-column: auto; min-height: 22rem; }
+  .project, .project-process { min-height: 24rem; }
+  .project-process { grid-column: auto; }
 }
 
 @media (max-width: 37rem) {
@@ -430,7 +431,6 @@ img { display: block; max-width: 100%; height: auto; }
   .navigation a, .navigation button { font-size: .875rem; }
   .disciplines { gap: .25rem .35rem; letter-spacing: 0; }
   .disciplines li + li::before { margin-right: .35rem; }
-  .project-process { min-height: 23rem; }
   .project-process .project-copy { width: 77%; }
   .project-process h3 { font-size: clamp(1.85rem, 8.15vw, 2.25rem); }
   .project-summary { max-width: 17ch; margin-block: .55rem 0; }
