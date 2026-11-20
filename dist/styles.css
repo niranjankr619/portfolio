@@ -198,17 +198,6 @@ img { display: block; max-width: 100%; height: auto; }
 .project-process { grid-row: span 2; --project-color: #dce9de; --project-ink: #1c352a; --project-accent: #355c48; --project-padding: clamp(1.2rem, 3vw, 3.3rem); }
 .project-flowlog { --project-color: #dbe8f3; --project-ink: #213b4d; --project-accent: #215574; }
 .project-knot { --project-color: #f7e1ce; --project-ink: #473127; --project-accent: #934c24; }
-.project-process::before, .project-knot::before {
-  position: absolute;
-  top: 10%;
-  left: 40%;
-  width: 61%;
-  aspect-ratio: 1;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  opacity: .18;
-  content: "";
-}
 .project-copy { position: relative; z-index: 2; width: 56%; padding: var(--project-padding) 0 var(--project-padding) var(--project-padding); }
 .project-process .project-copy { width: 49%; }
 .project h3 { margin-top: clamp(.75rem, 1.5vw, 1.7rem); font-size: var(--card-title); line-height: .96; letter-spacing: -.015em; }
