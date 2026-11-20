@@ -254,11 +254,11 @@ img { display: block; max-width: 100%; height: auto; }
   color: #fff8e9;
   background: var(--green-band);
 }
-.skills-inner { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1rem; min-height: clamp(4.6rem, 7.3vw, 6.65rem); padding-block: .8rem; }
-.skills h2 { padding-right: 1rem; border-right: 1px solid #e3d9b880; white-space: nowrap; }
-.skill-track { overflow: auto hidden; scrollbar-width: none; }
+.skills-inner { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: .75rem; padding-block: 1.5rem; text-align: center; }
+.skills h2 { white-space: nowrap; }
+.skill-track { display: flex; width: 100%; overflow: auto hidden; scrollbar-width: none; }
 .skill-track::-webkit-scrollbar { display: none; }
-.skill-track ul { display: flex; align-items: center; width: max-content; min-height: 2.45rem; padding-inline: .9rem; list-style: none; font-size: .875rem; white-space: nowrap; }
+.skill-track ul { display: flex; flex: 0 0 auto; align-items: center; width: max-content; min-height: 2.45rem; padding-inline: .9rem; list-style: none; font-size: .875rem; white-space: nowrap; }
 .skill-track li + li::before { margin-inline: .95rem; color: var(--brass); content: "✦"; }
 .skill-controls { display: flex; gap: .35rem; color: #e7c583; }
 .skill-controls .round-control:hover { background: var(--brass); color: var(--charcoal); }
@@ -412,10 +412,6 @@ img { display: block; max-width: 100%; height: auto; }
   .project { min-height: 16rem; }
   .project-process { min-height: 20rem; }
   .device-laptop { top: 13%; width: 95%; right: -46%; }
-  .skills-inner { grid-template-columns: minmax(0, 1fr) auto; gap: .45rem .75rem; }
-  .skills h2 { padding: 0; border: 0; }
-  .skill-track { grid-row: 2; grid-column: 1 / -1; }
-  .skill-controls { grid-row: 1; grid-column: 2; }
   .about-copy { padding-block: .5rem; }
   .method { background-size: auto 100%; background-position: center; }
 }

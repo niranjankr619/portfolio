@@ -35,6 +35,39 @@ window.addEventListener("hashchange", highlightNavigation);
 
 const skillTrack = document.querySelector(".skill-track");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const skillList = skillTrack.querySelector("ul");
+const skillCopy = skillList.cloneNode(true);
+skillCopy.setAttribute("aria-hidden", "true");
+skillTrack.append(skillCopy);
+const skillSection = document.querySelector(".skills");
+const skillPause = document.querySelector("#skill-pause");
+let skillsPaused = false;
+let lastSkillFrame = 0;
+let skillProgress = 0;
+
+skillPause.addEventListener("click", () => {
+  skillsPaused = !skillsPaused;
+  skillPause.setAttribute("aria-pressed", String(skillsPaused));
+  skillPause.setAttribute("aria-label", skillsPaused ? "Resume automatic scrolling" : "Pause automatic scrolling");
+  skillPause.firstElementChild.textContent = skillsPaused ? "▷" : "Ⅱ";
+});
+
+function scrollSkills(time) {
+  const elapsed = Math.min(time - lastSkillFrame, 50);
+  lastSkillFrame = time;
+  const paused = skillsPaused || reducedMotion.matches || document.hidden
+    || skillSection.matches(":hover, :focus-within");
+  if (!paused && skillList.offsetWidth > 0) {
+    skillProgress += elapsed * .03;
+    const distance = Math.floor(skillProgress);
+    if (distance > 0) {
+      skillTrack.scrollLeft = (skillTrack.scrollLeft + distance) % skillList.offsetWidth;
+      skillProgress -= distance;
+    }
+  }
+  requestAnimationFrame(scrollSkills);
+}
+requestAnimationFrame(scrollSkills);
 
 for (const button of document.querySelectorAll("[data-skill-scroll]")) {
   button.addEventListener("click", () => {
