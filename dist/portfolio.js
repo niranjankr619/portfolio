@@ -27,13 +27,17 @@ const headerMenu = document.querySelector("#header-menu");
 function closeNavigation() {
   menuToggle.setAttribute("aria-expanded", "false");
   menuToggle.setAttribute("aria-label", "Open navigation");
+  document.documentElement.classList.remove("menu-open");
 }
 
 menuToggle.addEventListener("click", () => {
   const open = menuToggle.getAttribute("aria-expanded") !== "true";
   menuToggle.setAttribute("aria-expanded", String(open));
   menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  document.documentElement.classList.toggle("menu-open", open);
 });
+
+window.matchMedia("(max-width: 52rem)").addEventListener("change", closeNavigation);
 
 headerMenu.addEventListener("click", (event) => {
   if (event.target.closest("a, button")) closeNavigation();
