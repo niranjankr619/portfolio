@@ -368,7 +368,14 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 @media (max-width: 52rem) {
-  :root { --nav-height: 6.75rem; }
+  :root {
+    --nav-height: 6.75rem;
+    --display: 2.25rem;
+    --section-title: 2.25rem;
+    --card-title: 2rem;
+  }
+  .hero h1, .work-intro h2, .method h2, .contact h2, .detail-dialog h2 { font-size: 2.25rem; }
+  .project-process h3, .step-title { font-size: 2.125rem; }
   .site-header { grid-template-columns: auto minmax(0, 1fr) auto; gap: .25rem .55rem; padding-block: .6rem .4rem; }
   .header-rule { display: none; }
   .navigation { grid-column: 1 / -1; grid-row: 2; flex-wrap: wrap; justify-content: space-between; max-width: 35rem; width: 100%; }
@@ -381,7 +388,7 @@ img { display: block; max-width: 100%; height: auto; }
     inset: auto;
     height: auto;
     flex: 1 0 clamp(16.5rem, 54vw, 28rem);
-    background-position: 84% bottom;
+    background-position: 77% bottom;
     mask-image: linear-gradient(180deg, transparent 0, #000 14%);
   }
   .hero-gallery::after { display: none; }
@@ -389,7 +396,6 @@ img { display: block; max-width: 100%; height: auto; }
   .work-intro { grid-template-columns: minmax(0, 1fr); }
   .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
   .project-process { grid-column: 1 / -1; grid-row: auto; }
-  .project-process h3 { font-size: clamp(2.05rem, 4.45vw, 2.5rem); }
   .project { min-height: 16rem; }
   .project-process { min-height: 20rem; }
   .device-laptop { top: 13%; width: 95%; right: -46%; }
@@ -398,6 +404,7 @@ img { display: block; max-width: 100%; height: auto; }
   .skill-track { grid-row: 2; grid-column: 1 / -1; }
   .skill-controls { grid-row: 1; grid-column: 2; }
   .about-copy { padding-block: .5rem; }
+  .method { background-size: auto 100%; background-position: center; }
 }
 
 @media (max-width: 42rem) {
@@ -408,7 +415,6 @@ img { display: block; max-width: 100%; height: auto; }
 @media (max-width: 37rem) {
   .navigation { gap: .45rem; }
   .navigation a, .navigation button { font-size: .875rem; }
-  .hero h1 { font-size: clamp(2.85rem, 10.8vw, 4.8rem); }
   .disciplines { gap: .25rem .35rem; letter-spacing: 0; }
   .disciplines li + li::before { margin-right: .35rem; }
   .project-process { min-height: 23rem; }
@@ -430,7 +436,7 @@ img { display: block; max-width: 100%; height: auto; }
   .step-title { margin-bottom: .7rem; }
   .about-inner { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
   .about-copy { grid-row: 1; max-width: none; }
-  .about-art { width: min(88%, 27rem); }
+  .about-art { width: 100%; }
   .contact-inner { grid-template-columns: minmax(0, 1fr); gap: .85rem; }
   .contact-inner .pill { justify-self: start; }
 }
