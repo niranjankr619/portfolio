@@ -65,7 +65,10 @@ img { display: block; max-width: 100%; height: auto; }
   width: 100%;
   margin: 0;
   padding-inline: max(var(--gutter), calc((100vw - 93rem) / 2));
-  background: #000;
+  background: #343635b8;
+  border-bottom: 1px solid #ffffff24;
+  -webkit-backdrop-filter: blur(20px) saturate(110%);
+  backdrop-filter: blur(20px) saturate(110%);
   display: grid;
   grid-template-columns: auto minmax(0, .56fr) auto minmax(0, 1fr);
   align-items: center;
@@ -411,7 +414,8 @@ img { display: block; max-width: 100%; height: auto; }
   .navigation a, .navigation button { min-height: 3.6rem; text-align: left; }
   .navigation > * + * { border-top: 1px solid #fff; }
   .navigation a[aria-current]::after { right: auto; width: 2rem; }
-  .nav-contact { justify-self: stretch; border-color: #fff; color: #fff; }
+  .nav-contact { justify-self: stretch; border-color: var(--brass); background: var(--brass); color: var(--charcoal); }
+  .nav-contact:hover { background: #dfbd7f; border-color: #dfbd7f; }
   .menu-toggle { color: #fff; }
   .skill-controls { display: none; }
   .hero { display: flex; flex-direction: column; align-items: stretch; }
