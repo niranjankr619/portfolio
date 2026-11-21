@@ -10,6 +10,7 @@
   <link rel="preload" href="assets/portfolio/hero.png" as="image" fetchpriority="high">
   <link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reference-sections.css">
   <script src="portfolio.js" defer></script>
 </head>
 <body>
@@ -65,7 +66,7 @@
             <div class="project-copy">
               <h3 id="the-process-title">The Process</h3>
               <p class="project-summary">Work orders, approvals, and operations in one flow.</p>
-              <button class="text-link project-link" type="button" data-detail="the-process" aria-label="View The Process case study">View case study <span aria-hidden="true">↗</span></button>
+              <a class="text-link project-link" href="work/the-process/index.html" aria-label="View The Process case study">View case study <span aria-hidden="true">↗</span></a>
             </div>
             <div class="project-mobile-media"><div class="mobile-browser"><div class="mobile-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/screens/process.svg" alt="The Process work order details interface." width="1920" height="940" loading="lazy"></div></div>
           </article>
@@ -113,60 +114,25 @@
         </div>
       </section>
 
-      <section class="method" id="process" aria-labelledby="method-title">
-        <div class="method-inner shell">
-          <div class="method-copy">
-            <p class="kicker">How I work</p>
-            <h2 id="method-title">Good design asks <em>better questions.</em></h2>
-            <p>A simple, practical approach I follow across product work.</p>
-          </div>
-          <ol class="method-steps">
-            <li class="step step-understand">
-              <button class="step-card" type="button" aria-pressed="false">
-                <span class="kicker">01 / Understand</span>
-                <span class="step-title">What are we <em>really</em> solving?</span>
-                <span class="step-topics">Context <b>/</b> Users <b>/</b> Goals</span>
-              </button>
-            </li>
-            <li class="step step-explore">
-              <button class="step-card" type="button" aria-pressed="false">
-                <span class="kicker">02 / Explore</span>
-                <span class="step-title">What are the <em>right</em> options?</span>
-                <span class="step-topics">Ideas <b>/</b> Trade-offs <b>/</b> Flows</span>
-              </button>
-            </li>
-            <li class="step step-validate">
-              <button class="step-card" type="button" aria-pressed="false">
-                <span class="kicker">03 / Design &amp; validate</span>
-                <span class="step-title">Does it work <em>for real people?</em></span>
-                <span class="step-topics">Prototype <b>/</b> Test <b>/</b> Iterate</span>
-              </button>
-            </li>
-          </ol>
-        </div>
-      </section>
+      <section aria-labelledby="approach-title" class="approach" id="process">
+<div aria-hidden="true" class="approach-art"></div>
+<div class="content-width approach-inner">
+<div class="approach-heading"><div class="center-label"><span></span><p class="eyebrow">02 / HOW I WORK</p><span></span></div><h2 id="approach-title">Good design asks <em>better questions.</em></h2><p>A simple, practical approach I follow across product work.</p></div>
+<div class="principles">
+<article class="principle principle-one"><span class="eyebrow">01 / UNDERSTAND</span><h3>What are we <em>really</em> solving?</h3><p>CONTEXT / USERS / GOALS</p></article>
+<article class="principle principle-two"><span class="eyebrow">02 / EXPLORE</span><h3>What are the <em>right</em> options?</h3><p>IDEAS / TRADE-OFFS / FLOWS</p></article>
+<article class="principle principle-three"><span class="eyebrow">03 / DESIGN &amp; VALIDATE</span><h3>Does it work for <em>real people?</em></h3><p>PROTOTYPE / TEST / ITERATE</p></article>
+</div>
+</div>
+</section>
 
-      <section class="about" id="about" aria-labelledby="about-title">
-        <div class="about-inner shell">
-          <div class="about-art">
-            <img src="assets/portfolio/about-portrait.png" alt="Grey graphite portrait of Niranjan Raghavan seated beside a drawing desk." width="1448" height="1086" loading="lazy">
-          </div>
-          <div class="about-copy">
-            <p class="kicker ruled">About me</p>
-            <h2 id="about-title">From commerce to<br><em>product design.</em></h2>
-            <p>My journey began in commerce, where I built a foundation in business and systems. That curiosity led me to design, where I combine analytical thinking, problem solving, and creativity to build useful products for real people.</p>
-            <button class="text-link" type="button" data-detail="story">Read my story <span aria-hidden="true">↗</span></button>
-          </div>
-        </div>
-      </section>
+      <section aria-labelledby="about-title" class="about-section" id="about">
+<div class="content-width about-inner"><div class="about-art"><img alt="Approved graphite illustration of Niranjan with architectural plans, books and design objects" height="1086" loading="lazy" src="assets/home/about_approved_unchanged.png" width="1448"/></div><div class="about-content"><div class="section-kicker"><span class="eyebrow">03 / ABOUT ME</span><span class="kicker-rule"></span></div><h2 id="about-title">Before interfaces,<br/><em>there was a home.</em></h2><p>I studied commerce, and my path to product design wasn't a straight line. While supporting my family and helping plan our home, I became fascinated by how spaces, systems and decisions shape people's everyday experiences.</p><p>That curiosity eventually led me to UI/UX design. Today, I work at the intersection of user needs, business thinking and connected digital workflows.</p><button class="text-link" type="button" data-detail="story">Read my story <span aria-hidden="true">↗</span></button></div></div>
+</section>
+
     </main>
-    <footer class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact-inner shell">
-        <h2 id="contact-title">Open to <em>full-time</em> opportunities.</h2>
-        <p>I’m looking to join a product team where I can design, simplify, and scale meaningful experiences.</p>
-        <button class="pill pill-outline" type="button" data-detail="contact-details">Let’s connect <span aria-hidden="true">↗</span></button>
-      </div>
-    </footer>
+    <footer aria-labelledby="footer-title" class="footer" id="contact"><div aria-hidden="true" class="footer-backdrop"></div><div class="content-width footer-inner"><span class="eyebrow footer-overline">OPEN TO FULL-TIME ROLES / 2026</span><div class="footer-body"><div class="footer-copy"><h2 id="footer-title">Open to <em>full-time</em><br/>opportunities.</h2><p>I'm looking to join a product team where I can simplify complex systems and craft meaningful experiences together.</p><div class="footer-buttons"><a class="button button-gold" href="mailto:niranjankr619@gmail.com?subject=Full-time%20design%20opportunity">Get in touch <span aria-hidden="true">↗</span></a><a class="button button-line" href="#work">View my work <span aria-hidden="true">↗</span></a></div></div><div aria-hidden="true" class="footer-ornament"><span>✳</span><i></i></div></div><div class="footer-rule"></div><div class="footer-bottom"><span>© 2026 Niranjan Raghavan</span><div><a href="#work">Projects</a><a href="#about">About</a><a href="mailto:niranjankr619@gmail.com">Email</a></div></div></div></footer>
+
   </div>
 
   <dialog class="detail-dialog" aria-labelledby="detail-title">
