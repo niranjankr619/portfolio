@@ -447,5 +447,8 @@ img { display: block; max-width: 100%; height: auto; }
   .mobile-browser-bar i:nth-child(2) { background: #d5b96b; }
   .mobile-browser-bar i:nth-child(3) { background: #91af94; }
   .mobile-phones { display: flex; align-items: flex-start; justify-content: center; gap: .7rem; }
-  .mobile-phones img { width: calc((100% - .7rem) / 2); flex: none; border: 3px solid #253236; border-radius: .75rem; }
+  .mobile-phone { width: calc((100% - .7rem) / 2); flex: none; padding: 3px; border: 2px solid #536368; border-radius: 1rem; background: #0c0e14; box-shadow: 0 .35rem .65rem #20304025; }
+  .mobile-phone-screen { position: relative; aspect-ratio: 402 / 875; overflow: hidden; border-radius: .65rem; background: #0c0e14; }
+  /* Supplied exports have 15px side padding and a shadow below the 875px screen. */
+  .mobile-phone-screen img { position: absolute; top: 0; left: -3.73135%; width: 107.71145%; max-width: none; height: auto; }
 }
