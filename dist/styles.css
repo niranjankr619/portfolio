@@ -427,11 +427,24 @@ img { display: block; max-width: 100%; height: auto; }
   .step-card { transform: rotateZ(var(--angle)); }
 }
 
+.project-mobile-media { display: none; }
 @media (max-width: 52rem) {
-  .project-copy { top: 7%; left: 7%; right: 7%; }
+  .project { display: flex; flex-direction: column; background-position: center; background-size: cover; }
+  .project-process { background-image: url("assets/covers/process-background.png"); }
+  .project-flowlog { background-image: url("assets/covers/flowlog-background.png"); }
+  .project-knot { background-image: linear-gradient(#fff7ef8c, #fff7ef8c), url("assets/covers/dk-background.png"); }
+  .project-copy { position: static; min-height: 13.5rem; padding: 2rem 1.25rem 1.25rem; }
   .project h3 { font-size: 2.25rem; }
   .project-summary { margin-top: .6rem; font-size: 1rem; max-width: 38ch; }
   .project-link { margin-top: .4rem; }
-  .project-cover { aspect-ratio: 768 / 1200; }
-  .project-cover img { object-position: center; }
+  .project-cover { display: none; }
+  .project-mobile-media { display: block; height: 15rem; padding: 0 1.25rem 1.75rem; }
+  .mobile-browser { overflow: hidden; border: 2px solid #606960; border-radius: .65rem; background: white; box-shadow: 0 .6rem 1rem #17251b26; }
+  .mobile-browser img { width: 100%; }
+  .mobile-browser-bar { display: flex; align-items: center; gap: 4px; height: 1.25rem; padding-inline: .5rem; background: #edf0f2; }
+  .mobile-browser-bar i { width: 5px; height: 5px; border-radius: 50%; background: #dc8e79; }
+  .mobile-browser-bar i:nth-child(2) { background: #d5b96b; }
+  .mobile-browser-bar i:nth-child(3) { background: #91af94; }
+  .mobile-phones { display: flex; align-items: flex-start; gap: .7rem; height: 100%; overflow: hidden; }
+  .mobile-phones img { width: calc((100% - .7rem) / 2); flex: none; border: 3px solid #253236; border-radius: .75rem; }
 }
