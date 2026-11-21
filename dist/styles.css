@@ -439,12 +439,13 @@ img { display: block; max-width: 100%; height: auto; }
   .project-link { margin-top: .4rem; }
   .project-cover { display: none; }
   .project-mobile-media { display: block; height: 15rem; padding: 0 1.25rem 1.75rem; }
+  .project-flowlog .project-mobile-media { height: auto; }
   .mobile-browser { overflow: hidden; border: 2px solid #606960; border-radius: .65rem; background: white; box-shadow: 0 .6rem 1rem #17251b26; }
   .mobile-browser img { width: 100%; }
   .mobile-browser-bar { display: flex; align-items: center; gap: 4px; height: 1.25rem; padding-inline: .5rem; background: #edf0f2; }
   .mobile-browser-bar i { width: 5px; height: 5px; border-radius: 50%; background: #dc8e79; }
   .mobile-browser-bar i:nth-child(2) { background: #d5b96b; }
   .mobile-browser-bar i:nth-child(3) { background: #91af94; }
-  .mobile-phones { display: flex; align-items: flex-start; gap: .7rem; height: 100%; overflow: hidden; }
+  .mobile-phones { display: flex; align-items: flex-start; justify-content: center; gap: .7rem; }
   .mobile-phones img { width: calc((100% - .7rem) / 2); flex: none; border: 3px solid #253236; border-radius: .75rem; }
 }
