@@ -152,7 +152,31 @@ if (!reducedMotion.matches) {
     }
   }, { threshold: .15 });
 
-  for (const element of document.querySelectorAll(".work-intro > *, .project, .method-copy > *, .step, .about-copy > *, .contact-inner > *")) {
+  for (const element of document.querySelectorAll(".work-intro > *, .method-copy > *, .step, .about-copy > *, .contact-inner > *")) {
     entrances.observe(element);
   }
 }
+
+const projectCards = [...document.querySelectorAll(".projects .project")];
+let stackFrame = 0;
+function updateProjectStack() {
+  stackFrame = 0;
+  if (reducedMotion.matches) return;
+  const stickyTop = document.querySelector(".site-header").offsetHeight + 12;
+  for (let i = 0; i < projectCards.length - 1; i++) {
+    const nextTop = projectCards[i + 1].getBoundingClientRect().top;
+    const distance = Math.max(1, Math.min(innerHeight - stickyTop, projectCards[i].offsetHeight));
+    const progress = Math.max(0, Math.min(1, (stickyTop + distance - nextTop) / distance));
+    projectCards[i].style.setProperty("--stack-scale", (1 - progress * .045).toFixed(3));
+  }
+}
+function requestProjectStack() {
+  if (!stackFrame) stackFrame = requestAnimationFrame(updateProjectStack);
+}
+addEventListener("scroll", requestProjectStack, { passive: true });
+addEventListener("resize", requestProjectStack);
+reducedMotion.addEventListener("change", () => {
+  if (reducedMotion.matches) projectCards.forEach(card => card.style.removeProperty("--stack-scale"));
+  else requestProjectStack();
+});
+requestProjectStack();

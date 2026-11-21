@@ -183,16 +183,20 @@ img { display: block; max-width: 100%; height: auto; }
   margin-top: clamp(1.5rem, 3vw, 3rem);
 }
 .project {
-  position: relative;
+  position: sticky;
+  top: calc(var(--nav-height) + .75rem);
+  z-index: var(--stack-level);
+  transform: scale(var(--stack-scale, 1));
+  transform-origin: center top;
   isolation: isolate;
   overflow: hidden;
   border-radius: 1rem;
   color: var(--project-ink);
   background: var(--project-color);
 }
-.project-process { --project-color: #e1e8d7; --project-ink: #202c24; }
-.project-flowlog { --project-color: #dbe7f2; --project-ink: #213b4d; }
-.project-knot { --project-color: #f3ded0; --project-ink: #473127; }
+.project-process { --stack-level: 1; --project-color: #e1e8d7; --project-ink: #202c24; }
+.project-flowlog { --stack-level: 2; --project-color: #dbe7f2; --project-ink: #213b4d; }
+.project-knot { --stack-level: 3; --project-color: #f3ded0; --project-ink: #473127; }
 .project-cover { display: block; aspect-ratio: 3 / 2; overflow: hidden; }
 .project-cover img { width: 100%; height: 100%; object-fit: cover; }
 .project-copy { position: absolute; z-index: 1; top: 10%; left: 5.4%; right: 20%; }
@@ -452,3 +456,5 @@ img { display: block; max-width: 100%; height: auto; }
   /* Supplied exports have 15px side padding and a shadow below the 875px screen. */
   .mobile-phone-screen img { position: absolute; top: 0; left: -3.73135%; width: 107.71145%; max-width: none; height: auto; }
 }
+
+@media (prefers-reduced-motion: reduce) { .project { position: relative; top: auto; transform: none; } }
