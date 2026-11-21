@@ -7,8 +7,15 @@ for (const button of document.querySelectorAll("[data-detail]")) {
     detailContent.replaceChildren(template.content.cloneNode(true));
     dialog.showModal();
     dialog.scrollTop = 0;
+    detailContent.querySelector("video")?.play().catch(() => {
+      // Playback controls remain available if the browser blocks autoplay.
+    });
   });
 }
+
+dialog.addEventListener("close", () => {
+  detailContent.querySelector("video")?.pause();
+});
 
 dialog.addEventListener("click", (event) => {
   if (event.target !== dialog) return;
