@@ -217,6 +217,26 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .project-play:is(:hover, :focus-visible) span { background: var(--brass); color: var(--charcoal); }
 .project-process .project-link { position: relative; z-index: 1; }
+.project-video {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #192820;
+  color: var(--paper);
+}
+.project-video[hidden] { display: none; }
+.project-video video { display: block; width: 100%; max-height: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
+.project-video-actions {
+  position: absolute;
+  z-index: 1;
+  inset: .5rem 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+}
+.project-video-actions .text-link { color: #fff4db; }
 .project-copy { position: absolute; z-index: 1; top: 10%; left: 5.4%; right: 20%; }
 .project h3 { font-size: clamp(2.25rem, 5.5vw, 5.5rem); line-height: 1; letter-spacing: -.025em; }
 .project-summary { margin-top: .65rem; max-width: 48ch; font-size: clamp(1rem, 1.5vw, 1.5rem); line-height: 1.45; }
@@ -330,7 +350,6 @@ img { display: block; max-width: 100%; height: auto; }
 .detail-dialog p:not(.kicker) { max-width: 58ch; color: var(--muted); }
 .dialog-close { position: absolute; top: .75rem; right: .75rem; color: var(--brass-ink); }
 .detail-image { width: 100%; margin-top: 1.4rem; border-radius: .7rem; }
-.detail-video { display: block; width: 100%; aspect-ratio: 16 / 9; margin: 1rem 0 .55rem; border-radius: .5rem; background: #1c3328; }
 .detail-phone { width: min(100%, 20rem); margin-inline: auto; }
 
 @keyframes arrive {

@@ -7,15 +7,8 @@ for (const button of document.querySelectorAll("[data-detail]")) {
     detailContent.replaceChildren(template.content.cloneNode(true));
     dialog.showModal();
     dialog.scrollTop = 0;
-    detailContent.querySelector("video")?.play().catch(() => {
-      // Playback controls remain available if the browser blocks autoplay.
-    });
   });
 }
-
-dialog.addEventListener("close", () => {
-  detailContent.querySelector("video")?.pause();
-});
 
 dialog.addEventListener("click", (event) => {
   if (event.target !== dialog) return;
@@ -25,6 +18,30 @@ dialog.addEventListener("click", (event) => {
     || event.clientY < bounds.top || event.clientY > bounds.bottom;
 
   if (outside) dialog.close();
+});
+
+const processPlay = document.querySelector(".project-play");
+const processPlayer = document.querySelector("#process-player");
+const processVideo = processPlayer.querySelector("video");
+const processVideoClose = processPlayer.querySelector(".project-video-close");
+const processCoverLink = processPlay.closest(".project").querySelector(".project-link");
+
+processPlay.addEventListener("click", () => {
+  processPlayer.hidden = false;
+  processPlay.hidden = true;
+  processCoverLink.inert = true;
+  processVideoClose.focus({ preventScroll: true });
+  processVideo.play().catch(() => {
+    // Native controls remain available when the browser blocks playback.
+  });
+});
+
+processVideoClose.addEventListener("click", () => {
+  processVideo.pause();
+  processPlayer.hidden = true;
+  processPlay.hidden = false;
+  processCoverLink.inert = false;
+  processPlay.focus({ preventScroll: true });
 });
 
 const navLinks = [...document.querySelectorAll(".navigation a")];
