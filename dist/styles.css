@@ -193,7 +193,7 @@ img { display: block; max-width: 100%; height: auto; }
 .project-process { --project-color: #e1e8d7; --project-ink: #202c24; }
 .project-flowlog { --project-color: #dbe7f2; --project-ink: #213b4d; }
 .project-knot { --project-color: #f3ded0; --project-ink: #473127; }
-.project-cover { aspect-ratio: 3 / 2; overflow: hidden; }
+.project-cover { display: block; aspect-ratio: 3 / 2; overflow: hidden; }
 .project-cover img { width: 100%; height: 100%; object-fit: cover; }
 .project-copy { position: absolute; z-index: 1; top: 10%; left: 5.4%; right: 20%; }
 .project h3 { font-size: clamp(2.25rem, 5.5vw, 5.5rem); line-height: 1; letter-spacing: -.025em; }
@@ -428,11 +428,10 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 @media (max-width: 52rem) {
-  .project { display: flex; flex-direction: column; }
-  .project-copy { position: static; order: -1; padding: 1.5rem 1.5rem 1.1rem; }
+  .project-copy { top: 7%; left: 7%; right: 7%; }
   .project h3 { font-size: 2.25rem; }
-  .project-summary { margin-top: .6rem; font-size: 1rem; }
+  .project-summary { margin-top: .6rem; font-size: 1rem; max-width: 38ch; }
   .project-link { margin-top: .4rem; }
-  .project-cover { aspect-ratio: 1536 / 680; }
-  .project-cover img { object-position: center bottom; }
+  .project-cover { aspect-ratio: 768 / 1200; }
+  .project-cover img { object-position: center; }
 }
