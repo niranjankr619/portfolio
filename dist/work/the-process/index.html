@@ -74,7 +74,7 @@
 @media(max-width:900px){.atlas-title-row{grid-template-columns:1fr;gap:14px}.atlas-teaser{grid-template-columns:1fr}.atlas-narrator{padding:24px 20px 0}.atlas-dashboard{padding:18px}.atlas-story{grid-template-columns:1fr}.atlas-screen img{height:360px}.atlas-voice-row{grid-template-columns:72px 1fr}.atlas-voice-row>img{width:72px;height:90px}.atlas-controls{align-items:flex-start;flex-direction:column}}
 @media(max-width:560px){.screen-atlas-section{padding:70px 0}.atlas-narrator-art{flex-basis:100px}.atlas-bubble{padding:14px;margin-bottom:24px}.atlas-bubble p{font-size:.8rem}.atlas-disclosure>summary{padding:16px}.atlas-interior{padding:14px}.atlas-screen{padding:8px}.atlas-screen img{height:220px}.atlas-bubble span{font-size:.5rem}.atlas-voice{padding:10px}.atlas-speech h3{font-size:1.1rem}.atlas-speech p{font-size:.77rem}}
 @media(prefers-reduced-motion:reduce){.atlas-summary-icon{transition:none}}
-</style><link rel="stylesheet" href="../../editorial-inner.css"/><link rel="stylesheet" href="../../process-sage-editorial.css"/><style>@font-face{font-family:"Instrument Serif";src:url("../../assets/fonts/instrument-serif.woff2")}@font-face{font-family:"Instrument Serif";font-style:italic;src:url("../../assets/fonts/instrument-serif-italic.woff2")}@font-face{font-family:"DM Sans";src:url("../../assets/fonts/dm-sans.woff2");font-weight:400 700}</style></head>
+</style><link rel="stylesheet" href="../../editorial-inner.css"/><link rel="stylesheet" href="../../process-sage-editorial.css"/><link rel="stylesheet" href="../../decision-flow.css"/><style>@font-face{font-family:"Instrument Serif";src:url("../../assets/fonts/instrument-serif.woff2")}@font-face{font-family:"Instrument Serif";font-style:italic;src:url("../../assets/fonts/instrument-serif-italic.woff2")}@font-face{font-family:"DM Sans";src:url("../../assets/fonts/dm-sans.woff2");font-weight:400 700}</style></head>
 <body class="case-process" id="top"><div class="progress" id="progress"></div>
 <header class="navbar"><nav aria-label="Main" class="nav-inner"><a class="logo" href="../../index.html">nr<span>.</span> / The Process</a><div class="nav-links"><a href="../../index.html#work">All projects</a><a href="#approval">Design decisions</a><a href="#outcome">Outcome</a></div><a class="nav-cta" href="#approval">Explore the work ↗</a></nav></header>
 <main>
@@ -98,28 +98,30 @@
 <section class="chapter approvals-clean" id="decisions">
 <div class="container">
 <div class="sectionline"><span class="num">04 / APPROVAL BEHAVIOUR</span></div>
-<div class="decision-intro">
-<div><span class="eyebrow">ONE EVALUATOR · THREE OUTCOMES</span><h2>One choice.<br/><em>Different consequences.</em></h2></div>
-<p>Review decisions need to communicate what happens next. Approve moves work forward, Reject returns it for rework, and Internal requests clarification without rejecting the work.</p>
+<div class="decision-heading"><h2>A decision changes <br/>what happens next.</h2><p>The evaluator has three responses. Explore each one to see how the work moves—or pauses—after review.</p></div>
+<div class="decision-experience">
+  <div class="decision-evidence">
+    <div class="decision-evidence-copy"><span>THE ACTUAL REVIEW INTERFACE</span><h3>One evaluator. <br/>Three responses.</h3><p>These controls come from the original approval design. The choice has consequences beyond this screen.</p></div>
+    <figure><img src="../../assets/approval-actions-detail.webp" alt="Original approval interface showing Internal, Reject and Approve controls" loading="lazy"/><figcaption>Original Figma design · Approval actions</figcaption></figure>
+  </div>
+  <div class="decision-selector">
+    <h3>Choose a response</h3>
+    <div class="decision-options" role="group" aria-label="Explore evaluator responses">
+      <button type="button" class="decision-option" data-decision="approve" aria-controls="decision-approve" aria-pressed="true"><span>Approve</span><span class="decision-option-hint">Move work forward</span><span aria-hidden="true">↗</span></button>
+      <button type="button" class="decision-option" data-decision="reject" aria-controls="decision-reject" aria-pressed="false"><span>Reject</span><span class="decision-option-hint">Return for rework</span><span aria-hidden="true">↶</span></button>
+      <button type="button" class="decision-option" data-decision="internal" aria-controls="decision-internal" aria-pressed="false"><span>Internal</span><span class="decision-option-hint">Ask for clarification</span><span aria-hidden="true">↗</span></button>
+    </div>
+  </div>
 </div>
-<div aria-label="Three possible evaluator actions" class="decision-strip">
-<article class="decision-item"><span class="decision-index">01 / PROCEED</span><h3>Approve <span aria-hidden="true">↗</span></h3><p>Continue through the configured review route.</p></article>
-<article class="decision-item"><span class="decision-index">02 / REWORK</span><h3>Reject <span aria-hidden="true">↶</span></h3><p>Return the Work Order to its Owner.</p></article>
-<article class="decision-item"><span class="decision-index">03 / CLARIFY</span><h3>Internal <span aria-hidden="true">···</span></h3><p>Ask another designated person for clarification.</p></article>
+<div class="decision-result" aria-live="polite">
+  <div class="decision-result-panel" data-result="approve" id="decision-approve">
+    <div class="decision-result-heading"><h3>Approved work moves on.</h3><p>The configured approval type chooses one of these routes. They are alternatives, not consecutive stages.</p></div>
+    <div class="decision-route"><div class="decision-route-origin"><span>Shared start</span><strong>Work Order → Evaluator approval</strong></div><div class="decision-route-fork"><div><span>Secondary path</span><strong>Next Work Order</strong><small>Direct progression</small></div><div><span>Primary path</span><strong>MD review → Next Work Order</strong><small>An additional sign-off first</small></div></div></div>
+  </div>
+  <div class="decision-result-panel" data-result="reject" id="decision-reject" hidden><div class="decision-result-heading"><h3>Rejected work returns.</h3><p>The Work Order goes back to its Owner for rework rather than moving to the next step.</p></div><div class="decision-simple-route"><span>Work Order</span><span aria-hidden="true">→</span><span>Evaluator</span><span aria-hidden="true">↶</span><strong>Owner / rework</strong></div></div>
+  <div class="decision-result-panel" data-result="internal" id="decision-internal" hidden><div class="decision-result-heading"><h3>Clarification keeps the review open.</h3><p>The evaluator asks another designated person for context without rejecting the work.</p></div><div class="decision-simple-route"><span>Work Order</span><span aria-hidden="true">→</span><span>Evaluator</span><span aria-hidden="true">→</span><strong>Internal clarification</strong></div></div>
 </div>
-<div class="routes-unified">
-<div class="routes-unified-head"><div><span class="eyebrow">AFTER AN APPROVAL</span><h3>One review.<br/><em>Two possible routes.</em></h3></div><p>The route is configured for the Work Order. <strong>The third and fourth markers represent alternatives, not consecutive stages.</strong></p></div>
-<div class="track-frame">
-<div class="track-caption">SHARED START <span>CHOOSE ONE PATH AFTER EVALUATOR APPROVAL</span></div>
-<ol aria-label="Four markers: submitted Work Order, evaluator review, secondary direct path, primary MD path" class="approval-route-track">
-<li class="route-point common"><span aria-hidden="true" class="route-dot">1</span><span class="route-kicker">START</span><strong>Work Order</strong><small>Submitted for review</small></li>
-<li class="route-point common"><span aria-hidden="true" class="route-dot">2</span><span class="route-kicker">EVALUATOR</span><strong>Decision</strong><small>Approve to continue</small></li>
-<li class="route-point secondary"><span aria-hidden="true" class="route-dot">3</span><span class="route-kicker">SECONDARY PATH</span><strong>Next Work Order</strong><small>Direct progression</small></li>
-<li class="route-point primary"><span aria-hidden="true" class="route-dot">4</span><span class="route-kicker">PRIMARY PATH</span><strong>MD review</strong><small>Then next Work Order</small></li>
-</ol>
-<p class="track-note">After marker 2, the configured route selects <b>③ direct progression</b> or <b>④ additional MD approval</b>. Both ultimately lead to the next Work Order.</p>
-</div>
-</div>
+<noscript><p class="decision-noscript">Reject returns the Work Order to its Owner. Internal asks another designated person for clarification.</p></noscript>
 </div>
 </section>
 <section class="chapter" id="sop"><div class="container"><div class="sectionline"><span class="num">05 / JUST-IN-TIME GUIDANCE</span></div><div class="editorial-pair"><div class="shot-tray reveal"><img alt="Actual Work Order detail screen with checklist-specific SOP controls" data-zoom="true" loading="lazy" src="../../assets/hero-work-order.webp"/><p class="figcaption">Source: <code>Work Order Details.svg</code> · Click to inspect the checklist controls.</p></div><div class="reveal"><span class="tagline">Design iteration</span><h3>Instructions where the work happens.</h3><p class="desc">My initial mapping connected Standard Operating Procedures to a broader Process Step. After a request for finer detail through my manager, I revised the interaction so each checklist item could open its own SOP in a modal.</p><div class="blue-rule">Specific guidance stays available on demand; the full instructions do not have to occupy the work screen at all times. The usability implications were not independently measured.</div></div></div></div></section>
@@ -182,4 +184,4 @@ if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>
  image.addEventListener('click',openSelected);image.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSelected()}});
  detail.addEventListener('keydown',e=>{if(e.target.matches('button,summary')&&e.key==='ArrowRight'){e.preventDefault();if(pos<shown().length-1){pos++;render()}} else if(e.target.matches('button,summary')&&e.key==='ArrowLeft'){e.preventDefault();if(pos>0){pos--;render()}}});
  render();
-})();</script></body></html>
+})();</script><script src="../../decision-flow.js" defer></script></body></html>
