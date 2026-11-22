@@ -1,0 +1,116 @@
+/* NIRANJAN UNIFIED PORTFOLIO — V4 / VARIANT 02
+   Override legacy page specificity *only* for shared design-system concerns.
+   Page-level narrative and original product evidence are not replaced.
+*/
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:100%;scroll-padding-top:92px}
+body{background:var(--c-paper);color:var(--c-body);font-family:var(--font-body);font-size:var(--type-body);font-weight:400;line-height:1.65}
+:where(main,section,article,aside,figure,div){min-width:0}
+img,video,svg{max-width:100%}
+img{height:auto}
+:where(.container,.p-container,.dk-container){max-width:none}
+/* Modern editorial pairing: DM Sans for strong headlines; Instrument Serif for intentional accents. */
+h1,h2,h3,h4,.site-footer h2,.home-hero h1,.home-section-intro h2,.work-heading h3,.about-copy h2,.approach-copy h2,
+.case-page h1,.case-page h2,.case-page h3,.process-page h1,.process-page h2,.process-page h3,
+.dk-chapter h2,.dk-chapter h3,.dk-chapter h4,.dk-intro h2,.p-intro h1,.p-section-heading h2,
+.story-title,.case-intro-layout h1,.chapter-intro h2{
+ font-family:var(--font-ui-display)!important;font-style:normal;font-weight:600;letter-spacing:-.045em;line-height:1.12;text-wrap:balance;
+}
+/* Hero headlines intentionally larger, never stretch text off screen. */
+.home-hero h1{font-size:clamp(44px,6.2vw,88px)!important;line-height:1.02;letter-spacing:-.055em;max-width:920px}
+.case-page h1,.process-page .p-intro h1,.case-page .case-intro-layout h1{font-size:var(--type-display)!important;line-height:1.05}
+.case-page h2,.process-page .p-section-heading h2,.dk-chapter h2,.story-title,
+.case-page .chapter-intro h2,.case-page .explorer-head h2,.case-page .outcome h2{font-size:var(--type-h2)!important;line-height:1.12}
+.case-page h3,.process-page .p-decision-copy h3,.dk-chapter h3{font-size:var(--type-h3)!important;line-height:1.18}
+/* editorial short italic, never all headlines italic */
+h1 em,h2 em,h3 em,.home-hero h1 em,.site-footer h2 em,.p-story h2 em{font-family:var(--font-display)!important;font-weight:400;font-style:italic!important;letter-spacing:-.015em}
+/* One readable base, metadata is never substituted for paragraph text */
+p,li,dd,dt,figcaption{overflow-wrap:break-word}
+.case-page p,.process-page p,.dk-chapter p{line-height:1.65}
+.case-page .p-decision-field p,.case-page .chapter-intro p,.case-page .decision-copy p,
+.case-page .explorer-description>p,.dk-chapter p:not(.eyebrow):not(.tiny):not(.section-number){font-size:var(--type-body);line-height:1.65}
+:where(.eyebrow,.tiny,.section-number,.case-counter,.p-overline,.p-kicker,.p-section-number,.dk-eyebrow){font-family:var(--font-label)!important;font-size:11px!important;font-weight:500;line-height:1.55;letter-spacing:.11em;text-transform:uppercase}
+:where(button,.btn,.nav-contact,.nav-links a,.work-link,.inline-link,.site-footer a){font-family:var(--font-body);font-size:14px;font-weight:600}
+a,button{transition:background-color .16s ease-out,border-color .16s ease-out,color .16s ease-out,transform .16s ease-out}
+:focus-visible{outline:3px solid var(--c-flowlog-ink)!important;outline-offset:3px!important}
+/* Shared site chrome, same exact proportions across all four pages. */
+.site-header{background:var(--c-brand-deep);color:var(--c-on-dark)}
+.nav-shell{min-height:80px;gap:clamp(10px,2.4vw,32px)}
+.site-header .brand{font-family:var(--font-display);font-size:34px;font-style:italic;letter-spacing:-.045em}
+.nav-links{gap:clamp(12px,2vw,28px)}
+.nav-links a,.nav-contact{font-size:14px}
+.nav-contact,.btn{border-radius:var(--radius-sm);min-height:44px}
+.site-footer{background:var(--c-brand-deep);color:var(--c-on-dark)}
+.site-footer h2{font-size:clamp(44px,5vw,76px)!important;line-height:1.1}
+/* Shared framework and section widths */
+.container{width:min(1200px,calc(100% - 2 * var(--page-gutter)))!important;margin-inline:auto}
+.home-section,.process-page .p-section,.process-page .p-decision,.case-page .chapter,
+.dk-chapter,.case-page .outcome,.case-page .explorer-section{padding-block:var(--section-space)}
+.process-page .p-decision{padding-block:clamp(64px,7.8vw,112px)}
+.dk-chapter{border-top:1px solid var(--c-border)}
+.process-page .p-intro,.case-page .case-opening{padding-block:clamp(48px,6vw,96px) clamp(32px,4vw,72px)}
+.process-page .p-intro-grid,.case-page .case-intro-layout{gap:clamp(24px,6vw,92px)}
+.case-page .p-section-heading,.process-page .p-section-heading{gap:clamp(24px,5vw,80px);margin-block:30px 45px}
+.case-page .p-story,.process-page .p-story,.case-page .story-section{background:var(--c-brand-deep);color:var(--c-on-dark);padding-block:clamp(64px,8vw,96px)}
+.case-page .story-section :is(h2,h3),.process-page .p-story :is(h2,h3){color:var(--c-on-dark)}
+/* Page accent text and rails never use insufficient contrast decorative colors */
+[data-project] :is(.p-section-number,.dk-section-label,.case-counter,.p-decision-note strong){color:var(--project-accent-ink)}
+[data-project] .p-story .p-section-number{color:#E7C894}
+[data-project] :is(.p-decision-note,.dk-note,.editorial-note){border-left-color:var(--project-accent-ink)}
+/* Genuine UI: framed and legible. Decorative cover can crop, evidence cannot. */
+.case-hero img,.p-cover img,.media-frame img,.p-evidence-frame img,.explorer-visual img{max-width:100%;object-fit:contain}
+.case-hero,.p-cover,.work-picture,.media-frame,.p-evidence-frame{border-radius:8px;box-shadow:none}
+.work-picture img{transition:transform .16s ease-out}
+.work-picture:hover img{transform:scale(1.012)}
+/* Visual diagrams: clearer route connectors, restrained paper treatment */
+.dk-chapter :is(.dk-flow,.dk-decision-flow,.dk-track,.dk-stage,.dk-timeline),
+.dk-chapter :is(.flow-node,.route-node,.dk-flow-node){min-width:0}
+.dk-chapter :is(.dk-flow,.dk-decision-flow,.dk-track,.dk-stage,.dk-timeline){border-color:var(--c-border)}
+.dk-chapter :is(.dk-path,.dk-line,.dk-connector){stroke-width:1.5px}
+/* Subtle separation instead of blanket card shadows */
+:is(.approach-card,.context-frame,.editorial-diagram,.dk-card,.fact,.media-frame){box-shadow:none}
+:where(.chapter,.p-section,.dk-chapter) :is(.p-decision-note,.dk-note){border-left:2px solid var(--project-accent-ink);border-radius:0;background:transparent}
+/* Accessibility */
+button{cursor:pointer}
+button:disabled{cursor:not-allowed}
+[hidden]{display:none!important}
+@media(max-width:1199px){:root{--section-space:96px}}
+@media(max-width:1050px){.nav-shell{min-height:72px}}
+@media(max-width:790px){
+ :root{--section-space:72px}
+ .nav-shell{min-height:66px}
+ .case-page :is(.p-intro-grid,.p-section-heading,.p-decision-grid),.process-page :is(.p-intro-grid,.p-section-heading,.p-decision-grid){grid-template-columns:minmax(0,1fr)!important}
+ .case-page .case-intro-layout{grid-template-columns:minmax(0,1fr)!important}
+ .dk-chapter :is(.dk-layout,.dk-split,.dk-columns,.dk-grid){max-width:100%}
+}
+@media(max-width:550px){
+ :root{--section-space:64px}
+ .home-hero h1{font-size:44px!important;line-height:1.05}
+ .home-section-intro h2,.about-copy h2,.approach-copy h2{font-size:34px!important}
+ .case-page h2,.process-page .p-section-heading h2,.dk-chapter h2{font-size:34px!important}
+ .case-page h3,.dk-chapter h3{font-size:26px!important}
+ .site-footer h2{font-size:44px!important}
+ .site-header .brand{font-size:30px}
+ .nav-links a,.nav-contact{font-size:14px}
+ .case-page .story-section{padding-block:64px}
+ .case-page :is(.story-lead,.decision-copy p,.chapter-intro p){font-size:16px}
+ .case-page :is(.dk-operating-route,.dk-route-track,.dk-state-route){max-width:100%;overflow-wrap:anywhere}
+}
+@media(max-width:350px){.container{width:calc(100% - 40px)!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+/* Shared editorial rhythm: remove Dezinersknot's former 150–170px disconnected gaps. */
+.case-clay .dk-chapter{padding-block:var(--section-space)}
+.case-clay .dk-chapter article+article{margin-top:clamp(40px,5.5vw,72px)}
+.case-clay .dk-editorial-lead{margin-bottom:clamp(32px,4.5vw,64px)}
+.case-clay .dk-index{margin-bottom:clamp(20px,3vw,40px)}
+.case-clay .dk-chapter h2,.case-clay .dk-chapter h3,.case-clay .dk-chapter h4{font-family:var(--font-ui-display)!important;font-weight:600!important;line-height:1.12!important}
+.case-clay .dk-chapter h2{font-size:var(--type-h2)!important}
+.case-clay .dk-chapter h3{font-size:var(--type-h3)!important}
+.case-clay .dk-chapter h4{font-size:var(--type-card)!important}
+.case-clay .dk-chapter h2 em,.case-clay .dk-chapter h3 em{font-family:var(--font-display)!important;font-weight:400!important}
+.dk-big-stat,.dk-small-stat,.dk-uat-total>strong,.dk-uat-breakdown strong,.dk-fee-statement strong{font-family:var(--font-display)}
+@media(max-width:790px){.case-clay .dk-chapter article+article{margin-top:48px}}
+@media(max-width:550px){.case-clay .dk-chapter h2{font-size:34px!important}.case-clay .dk-chapter h3{font-size:26px!important}}
+/* 320px correction: long stakeholder facts must not extend past the viewport. */
+.case-facts strong,.facts-grid strong{overflow-wrap:anywhere;white-space:normal;min-width:0;max-width:100%}
+@media(max-width:360px){.case-facts .facts-grid{grid-template-columns:minmax(0,1fr)}.case-facts .fact,.case-facts .fact+.fact,.case-facts .fact:nth-child(3){border-left:0;padding:14px 0;border-top:1px solid var(--c-border)}.case-facts .fact:first-child{border-top:0}}

@@ -1,0 +1,240 @@
+/* FLOWLOG PAGE — content layout uses the locked design-system.css tokens.
+   No independent typography values or project-specific theme changes.
+   Scope: .flowlog-page only. Approved header, cover art, shared footer stay unchanged. */
+.flowlog-page { background:var(--color-paper); color:var(--color-heading); }
+.flowlog-page h1,.flowlog-page h2,.flowlog-page h3 { font-family:var(--font-display);font-weight:var(--weight-display);letter-spacing:-.035em; }
+.flowlog-page h1{font-size:var(--type-display);line-height:var(--line-display);letter-spacing:-.045em;}
+.flowlog-page h2{font-size:var(--type-h2);line-height:var(--line-heading);}
+.flowlog-page h3{font-size:var(--type-card);line-height:1.15;}
+.flowlog-page em{color:var(--color-blue);font-style:italic;}
+.flowlog-page p{max-width:70ch;}
+.flowlog-page .p-overline,.flowlog-page .p-kicker,.flowlog-page .p-section-number{font-family:var(--font-label);font-size:var(--type-label);font-weight:var(--weight-medium);letter-spacing:.13em;line-height:1.6;text-transform:uppercase;}
+.flowlog-page .p-overline{color:var(--color-blue-ink);display:block;margin-bottom:13px;}
+.flowlog-page .p-section-number{color:var(--color-blue-ink);display:flex;align-items:center;gap:16px;}
+.flowlog-page .p-section-number::after{content:'';display:block;height:1px;background:var(--color-line);flex:1;min-width:12px;}
+.flowlog-page .p-section-number span{font-size:var(--type-label);color:#315D86;letter-spacing:.08em;text-transform:none;}
+.flowlog-page .p-section{padding:var(--section-space) 0;border-top:1px solid var(--color-line);}
+.flowlog-page .p-section-heading{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(22px,5vw,82px);align-items:end;margin:30px 0 45px;}
+.flowlog-page .p-section-heading h2{max-width:780px;margin:0;}
+.flowlog-page .p-section-heading p{font-size:var(--type-lead);line-height:var(--line-lead);color:var(--color-body);margin:0;max-width:46ch;}
+/* 01 — opener: project scope instead of a misleading approvals headline. */
+.flowlog-page .p-intro{padding:var(--space-8) 0 var(--space-7);}
+.flowlog-page .p-intro-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.65fr);gap:clamp(35px,6vw,110px);align-items:end;}
+.flowlog-page .p-kicker{color:var(--color-blue-ink);margin-bottom:24px;}
+.flowlog-page .p-kicker span{color:var(--color-gold);padding:0 12px;}
+.flowlog-page .p-intro h1{font-size:var(--type-case-opening);max-width:800px;margin:0 0 26px;}
+.flowlog-page .p-deck{font-family:var(--font-display);font-size:var(--type-case-deck);line-height:1.19;letter-spacing:-.015em;color:#527CA5;margin:0 0 19px;}
+.flowlog-page .p-intro-description{font-size:var(--type-body);line-height:var(--line-body);color:var(--color-body);max-width:59ch;margin:0;}
+.flowlog-page .p-intro-question{border-top:1px solid var(--color-gold);padding-top:22px;}
+.flowlog-page .p-intro-question>p:not(.p-overline){font-size:var(--type-lead);line-height:1.56;margin:0 0 21px;color:var(--color-body);}
+.flowlog-page .p-intro-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.flowlog-page .p-intro-tags span{border:1px solid var(--color-line);background:var(--color-surface-soft);border-radius:100px;font-size:var(--type-label);color:#315D86;padding:7px 10px;font-weight:var(--weight-medium);}
+/* 02/03 — keep approved image intact, crop only decorative banner. */
+.flowlog-page .p-cover{width:min(1490px,calc(100% - 52px));border:1px solid var(--color-line);border-bottom:0;border-radius:10px 10px 0 0;background:var(--project-tint);position:relative;overflow:hidden;margin:0 auto;}
+.flowlog-page .p-cover img{width:100%;height:clamp(330px,37vw,520px);object-fit:cover;object-position:50% 45%;}
+.flowlog-page .p-cover figcaption{position:absolute;bottom:14px;left:17px;background:#fffef3ee;padding:7px 10px;border-radius:3px;font:500 var(--type-label) var(--font-label);letter-spacing:.06em;color:#334B3C;}
+.flowlog-page .p-cover figcaption span{margin-left:14px;font-weight:400;letter-spacing:0;}
+.flowlog-page .p-facts{border-bottom:1px solid var(--color-line);background:var(--color-surface);}
+.flowlog-page .p-facts-index{padding-top:14px;font:500 var(--type-label)/1.5 var(--font-label);letter-spacing:.13em;color:var(--color-blue-ink);}
+.flowlog-page .p-facts-grid{display:grid;grid-template-columns:.95fr .85fr 1.1fr 1.5fr;}
+.flowlog-page .p-facts-grid>div{padding:27px 22px;min-width:0;border-left:1px solid var(--color-line);}
+.flowlog-page .p-facts-grid>div:first-child{padding-left:0;border-left:0;}
+.flowlog-page .p-facts-grid strong{display:block;font-size:var(--type-small);line-height:1.55;font-weight:var(--weight-medium);color:var(--color-heading);}
+/* 04 — existing approved process illustrations, same dark olive across case studies. */
+.flowlog-page .p-story{background:var(--color-brand);color:var(--color-on-dark);padding:var(--space-8) 0;overflow:hidden;}
+.flowlog-page .p-story .p-section-number{color:#DCBF91;}
+.flowlog-page .p-story .p-section-number::after{background:#ffffff34;}
+.flowlog-page .p-story .p-section-number span{color:#E2C9A6;}
+.flowlog-page .p-story .p-section-heading{margin-bottom:43px;}
+.flowlog-page .p-story h2{color:#FFF8EF;}
+.flowlog-page .p-story h2 em{color:#E0C295;}
+.flowlog-page .p-story .p-section-heading p{color:#DEE7D9;}
+.flowlog-page .p-story .story-scene img{height:260px;border-radius:7px;object-fit:cover;}
+.flowlog-page .p-story .story-scene .caption{border-color:#D7B98A;}
+.flowlog-page .p-story .story-scene h3{color:#FFF9EF;font-size:var(--type-card);}
+.flowlog-page .p-story .story-scene .caption p{color:#D6E2D7;}
+.flowlog-page .p-story-disclaimer{color:#D2DAC9;font-size:var(--type-small);line-height:1.7;margin:29px 0 0;max-width:90ch;}
+/* 05 — brief + two genuine original screenshots. */
+.flowlog-page .p-brief{background:var(--color-surface);}
+.flowlog-page .p-section-heading--brief{grid-template-columns:minmax(0,1.2fr) minmax(0,.75fr);}
+.flowlog-page .p-brief-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(30px,4.5vw,66px);align-items:start;}
+.flowlog-page .p-brief-questions{border-top:1px solid var(--color-line);}
+.flowlog-page .p-question{display:grid;grid-template-columns:36px 1fr;gap:17px;padding:17px 0 20px;border-bottom:1px solid var(--color-line);}
+.flowlog-page .p-question>span{font:500 11px var(--font-label);color:var(--color-blue-ink);padding-top:5px;}
+.flowlog-page .p-question h3{font-size:var(--type-card);margin:0 0 4px;}
+.flowlog-page .p-question p{font-size:var(--type-small);color:var(--color-body);line-height:1.65;margin:0;}
+.flowlog-page .p-evidence-pair{display:grid;grid-template-columns:1fr;gap:15px;}
+.flowlog-page .p-brief-caption{margin:16px 0 0;font-size:var(--type-small);color:var(--color-muted);}
+.flowlog-page .p-brief-insight{border-left:3px solid var(--color-blue);background:var(--color-surface-soft);padding:25px 29px;margin-top:49px;}
+.flowlog-page .p-brief-insight p{font-size:var(--type-lead);line-height:var(--line-lead);margin:0;max-width:85ch;color:var(--color-heading);}
+.flowlog-page .p-brief-insight strong{font-weight:var(--weight-strong);}
+/* 06 — one screenshot-and-explanation component for all four decisions. */
+.flowlog-page .p-chapter-header{padding:var(--space-8) 0 var(--space-6);}
+.flowlog-page .p-chapter-header .p-section-heading{margin-bottom:0;}
+.flowlog-page .p-decision{background:var(--color-surface);padding:var(--space-7) 0;border-top:1px solid var(--color-line);}
+.flowlog-page .p-decision:nth-of-type(even){background:var(--color-paper);}
+.flowlog-page .p-decision-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(36px,4.6vw,75px);margin-top:32px;align-items:start;}
+.flowlog-page .p-decision-copy h2{max-width:600px;margin:0 0 32px;}
+.flowlog-page .p-decision-field{margin:22px 0 0;max-width:62ch;}
+.flowlog-page .p-decision-field p{font-size:var(--type-body);line-height:var(--line-body);color:var(--color-body);margin:0;}
+.flowlog-page .p-decision-field strong{font-weight:var(--weight-strong);color:var(--color-heading);}
+.flowlog-page .p-decision-note{border-left:2px solid var(--color-blue);background:#EAF1F8;padding:20px 24px;margin-top:30px;max-width:68ch;}
+.flowlog-page .p-decision-note strong{font:500 11px var(--font-label);letter-spacing:.08em;color:#315D86;}
+.flowlog-page .p-decision-note p{font-size:var(--type-small);line-height:1.7;color:var(--color-muted);margin:10px 0 0;}
+.flowlog-page .p-decision-evidence{display:grid;gap:17px;min-width:0;}
+.flowlog-page .p-evidence-media{margin:0;border:var(--border-card);border-radius:var(--radius-card);overflow:hidden;background:var(--color-surface);min-width:0;}
+.flowlog-page .p-evidence-visual{background:#EAF1F8;min-width:0;padding:clamp(12px,2vw,23px);}
+.flowlog-page .p-evidence-visual img{display:block;width:100%;height:auto;aspect-ratio:1920/940;object-fit:contain;background:#fff;border:1px solid #DCE4DF;}
+.flowlog-page .p-evidence-caption{padding:15px 17px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--color-line);}
+.flowlog-page .p-evidence-caption>span{display:grid;gap:3px;min-width:0;}
+.flowlog-page .p-evidence-caption strong{font-size:var(--type-small);font-weight:var(--weight-strong);color:var(--color-heading);}
+.flowlog-page .p-evidence-caption small{font-size:var(--type-label);color:var(--color-muted);overflow-wrap:anywhere;}
+.flowlog-page .p-evidence-caption button{white-space:nowrap;border:1px solid #B8C8BB;background:var(--color-surface);color:var(--color-brand);border-radius:var(--radius-button);padding:9px 12px;font-size:var(--type-control);font-weight:var(--weight-strong);cursor:pointer;}
+.flowlog-page .p-evidence-caption button:hover{background:var(--color-surface-soft);}
+.flowlog-page .p-evidence-visual img[src$="review.svg"]{aspect-ratio:1921/1431;}
+/* 07 — current interactive viewer, unchanged logic, aligned sizes. */
+.flowlog-page .p-explorer{background:#F4F3EC;padding:var(--space-8) 0;}
+.flowlog-page .p-explorer .p-section-heading{margin-bottom:34px;}
+.flowlog-page .p-explorer .explorer-head{align-items:center;}
+.flowlog-page .p-explorer .explorer-head p{margin:0;}
+.flowlog-page .p-explorer .explorer-title{font-size:var(--type-h3);}
+.flowlog-page .p-explorer .explorer-description>p{font-size:var(--type-body);}
+/* 08 — outcomes with explicit claims boundaries. */
+.flowlog-page .p-outcome{background:var(--color-surface);}
+.flowlog-page .p-outcome-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(35px,6vw,100px);margin-top:33px;}
+.flowlog-page .p-outcome-grid h2{margin:0 0 24px;}
+.flowlog-page .p-outcome-grid>div>p:not(.p-outcome-quote){font-size:var(--type-lead);color:var(--color-body);line-height:1.65;}
+.flowlog-page .p-outcome-quote{font-family:var(--font-display);font-size:var(--type-h3);line-height:1.15;color:#4A6953;margin-top:35px;}
+.flowlog-page .p-outcome-details{border-top:1px solid var(--color-line);}
+.flowlog-page .p-outcome-details>div{padding:20px 0;border-bottom:1px solid var(--color-line);}
+.flowlog-page .p-outcome-details p{font-size:var(--type-body);line-height:1.7;color:var(--color-body);margin:0;}
+.flowlog-page .p-final-line{max-width:1000px;padding-top:40px;margin:38px 0 0;border-top:1px solid var(--color-line);font-family:var(--font-display);font-size:var(--type-h3);line-height:1.15;}
+/* The existing footer belongs to the shared site and is intentionally not reskinned. */
+@media(max-width:990px){
+  .flowlog-page .p-intro-grid,.flowlog-page .p-section-heading,.flowlog-page .p-section-heading--brief,.flowlog-page .p-brief-grid,.flowlog-page .p-decision-grid,.flowlog-page .p-outcome-grid{grid-template-columns:1fr;gap:24px;}
+  .flowlog-page .p-intro-question{max-width:650px;}
+  .flowlog-page .p-brief-evidence .p-evidence-pair{grid-template-columns:1fr 1fr;}
+  .flowlog-page .p-decision-copy h2{margin-bottom:18px;}
+  .flowlog-page .p-facts-grid{grid-template-columns:1fr 1fr;}
+  .flowlog-page .p-facts-grid>div:nth-child(3){border-left:0;}
+  .flowlog-page .p-facts-grid>div:nth-child(n+3){border-top:1px solid var(--color-line);}
+}
+@media(max-width:600px){
+  .flowlog-page .p-intro{padding:51px 0 44px;}
+  .flowlog-page .p-intro-question>p:not(.p-overline){font-size:17px;}
+  .flowlog-page .p-cover{width:100%;border-radius:0;}
+  .flowlog-page .p-cover img{height:auto;aspect-ratio:1.67;object-fit:cover;object-position:center 37%;}
+  .flowlog-page .p-cover figcaption{font-size:var(--type-label);left:8px;bottom:8px;}
+  .flowlog-page .p-cover figcaption span{display:none;}
+  .flowlog-page .p-facts-grid>div{padding:19px 12px;}
+  .flowlog-page .p-facts-grid>div:first-child{padding-left:0;}
+  .flowlog-page .p-facts-grid strong{font-size:var(--type-small);}
+  .flowlog-page .p-section-heading{margin:24px 0 32px;}
+  .flowlog-page .p-section-heading p{font-size:16px;}
+  .flowlog-page .p-story{padding:var(--space-7) 0;}
+  .flowlog-page .p-story .story-scenes{display:flex;}
+  .flowlog-page .p-story .story-scene{flex-basis:83%;min-width:83%;}
+  .flowlog-page .p-story .story-scene img{height:270px;}
+  .flowlog-page .p-brief-evidence .p-evidence-pair{grid-template-columns:1fr;}
+  .flowlog-page .p-decision{padding:var(--space-6) 0;}
+
+  .flowlog-page .p-decision-note{padding:17px 18px;}
+  .flowlog-page .p-evidence-visual{padding:10px;}
+  .flowlog-page .p-evidence-caption{align-items:stretch;flex-direction:column;gap:10px;padding:12px;}
+  .flowlog-page .p-evidence-caption button{align-self:start;}
+  .flowlog-page .p-explorer{padding:var(--space-7) 0;}
+
+}
+@media(prefers-reduced-motion:reduce){.flowlog-page *{scroll-behavior:auto;}}
+
+/* v2 / strict approved applied typography and content grid. */
+.flowlog-page{font-family:var(--font-body);font-size:var(--type-body);line-height:var(--line-body);}
+.flowlog-page .p-intro h1{font-size:var(--type-display);font-weight:var(--weight-display);max-width:790px;line-height:var(--line-display);}
+.flowlog-page .p-deck{font-size:var(--type-h3);font-weight:var(--weight-display);}
+.flowlog-page .p-section-heading h2,.flowlog-page .p-decision h2,.flowlog-page .p-outcome h2{font-size:var(--type-h2);line-height:var(--line-heading);font-weight:var(--weight-display);}
+.flowlog-page .p-story .story-scene h3{font-size:var(--type-card);font-weight:var(--weight-display);}
+.flowlog-page .p-evidence-caption small{font-size:var(--type-small);}
+.flowlog-page .p-brief-caption{font-size:var(--type-small);}
+.flowlog-page .p-section{padding-top:var(--section-space);padding-bottom:var(--section-space);}
+.flowlog-page .p-decision{padding-top:var(--space-7);padding-bottom:var(--space-7);}
+.flowlog-page .p-intro-tags span{font-size:var(--type-small);}
+.flowlog-page .p-decision-note{background:var(--color-sage-tint);}
+.flowlog-page .p-final-line{font-size:var(--type-h3);}
+/* Keep original product UI readable and uncropped; the decorative cover alone crops. */
+.flowlog-page .p-evidence-visual img{object-fit:contain;}
+.flowlog-page .p-brief .p-evidence-visual img{object-fit:contain;}
+@media (max-width:790px){
+  .flowlog-page .p-intro{padding-top:var(--space-7);padding-bottom:var(--space-6);}
+}
+@media (max-width:550px){
+  .flowlog-page .p-intro{padding-top:var(--space-6);}
+  .flowlog-page .p-intro h1{font-size:var(--type-display);letter-spacing:-.025em;}
+  .flowlog-page .p-section-heading h2,.flowlog-page .p-decision h2,.flowlog-page .p-outcome h2{font-size:var(--type-h2);}
+  .flowlog-page .p-decision-field p,.flowlog-page .p-outcome-details p{font-size:var(--type-body);}
+  .flowlog-page .p-section-number{letter-spacing:.08em;}
+  .flowlog-page .p-evidence-caption{flex-wrap:wrap;}
+  .flowlog-page .p-evidence-caption button{min-height:42px;}
+  .flowlog-page .p-cover figcaption span{display:none;}
+}
+
+/* FlowLog-specific compositions. All font, surface, spacing and control systems stay locked to Process tokens. */
+.flowlog-page {--project-accent:var(--color-blue);--project-tint:#EAF1F8;background:var(--color-paper);}
+.flowlog-page .p-intro-description p{font-size:var(--type-body);line-height:var(--line-body);color:var(--color-body);margin:0 0 12px;}
+.flowlog-page .p-intro h1{max-width:860px;}
+.flowlog-page .p-facts-grid{grid-template-columns:1fr 1fr 1.2fr 1.2fr;}
+.flowlog-page .fl-facts-detail{display:grid;grid-template-columns:1fr 1fr 2fr;gap:28px;border-top:1px solid var(--color-line);padding:24px 0 36px;}
+.flowlog-page .fl-facts-detail strong{font:500 var(--type-label)/1.6 var(--font-label);color:var(--color-blue-ink);text-transform:uppercase;letter-spacing:.1em;}
+.flowlog-page .fl-facts-detail p{font-size:var(--type-small);line-height:1.7;color:var(--color-body);margin:10px 0 0;}
+.flowlog-page .fl-scene-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;}
+.flowlog-page .fl-scene-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
+.flowlog-page .fl-scene-grid .caption{border-top:1px solid #D7B98A;margin-top:14px;padding-top:16px;}
+.flowlog-page .fl-scene-grid .caption span{font:500 var(--type-label)/1.6 var(--font-label);color:#DDBF93;}
+.flowlog-page .fl-scene-grid .caption h3{margin:8px 0;}
+.flowlog-page .fl-work-rail{border-top:1px solid var(--color-line);padding-top:20px;margin-top:18px;font-size:var(--type-small)!important;color:var(--color-blue-ink)!important;}
+.flowlog-page .p-decision-copy h2{font-size:var(--type-h2);}
+.flowlog-page .p-decision-field .p-overline{margin:0 0 10px;}
+.flowlog-page .p-decision-field ul,.flowlog-page .p-decision-field ol{margin:10px 0 0;padding-left:22px;color:var(--color-body);line-height:var(--line-body);font-size:var(--type-body);}
+.flowlog-page .p-decision-field li{padding-bottom:6px;}
+.flowlog-page .p-decision-field p+p{margin-top:10px;}
+.flowlog-page .p-evidence-visual{background:#EAF1F8;}
+.flowlog-page .p-evidence-visual img{height:clamp(310px,37vw,450px);aspect-ratio:auto;width:100%;object-fit:contain;border:0;background:transparent;}
+.flowlog-page .fl-image-button{width:100%;cursor:zoom-in;background:none;border:0;padding:0;display:block;}
+.flowlog-page .p-evidence-caption button{border:1px solid var(--color-line);background:var(--color-surface);border-radius:5px;padding:8px 13px;color:var(--color-heading);cursor:zoom-in;font:600 var(--type-small) var(--font-body);}
+.flowlog-page .fl-iteration{background:var(--color-paper);}
+.flowlog-page .fl-featured-journey{border-top:1px solid var(--color-line);padding:24px 0 30px;}
+.flowlog-page .fl-featured-journey ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;counter-reset:step;list-style:none;padding:0;margin:18px 0;}
+.flowlog-page .fl-featured-journey li{border:1px solid var(--color-line);border-radius:var(--radius-card);background:var(--color-surface);padding:14px;font-size:var(--type-small);line-height:1.5;color:var(--color-heading);}
+.flowlog-page .fl-featured-journey li::before{counter-increment:step;content:counter(step,decimal-leading-zero)' / ';font:500 var(--type-label) var(--font-label);color:var(--color-blue-ink);}
+.flowlog-page .fl-featured-journey p{font-size:var(--type-small);color:var(--color-muted);}
+.flowlog-page .fl-outcome-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.flowlog-page .fl-outcome-grid article{border:1px solid var(--color-line);border-radius:var(--radius-card);background:var(--color-surface);padding:27px;}
+.flowlog-page .fl-outcome-grid p{font-size:var(--type-body);line-height:var(--line-body);color:var(--color-body);}
+.flowlog-page .fl-outcome-grid .p-overline{color:var(--color-blue-ink);font-size:var(--type-label);}
+.flowlog-page .fl-reflection{border-top:1px solid var(--color-line);padding-top:50px;margin-top:55px;max-width:850px;}
+.flowlog-page .fl-reflection h3{font-size:var(--type-h3);margin:14px 0 20px;}
+.flowlog-page .fl-reflection p{font-size:var(--type-body);line-height:var(--line-body);color:var(--color-body);}
+.flowlog-page .fl-reflection p:last-child{font-family:var(--font-display);font-size:var(--type-card);line-height:1.35;color:var(--color-heading);}
+@media(max-width:1000px){.flowlog-page .fl-scene-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:790px){.flowlog-page .p-facts-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.flowlog-page .fl-facts-detail{grid-template-columns:1fr 1fr;}.flowlog-page .fl-featured-journey ol{grid-template-columns:repeat(2,minmax(0,1fr));}.flowlog-page .p-decision-grid{grid-template-columns:1fr;}.flowlog-page .fl-outcome-grid{grid-template-columns:1fr;}}
+@media(max-width:550px){.flowlog-page .fl-scene-grid{grid-template-columns:1fr;}.flowlog-page .fl-facts-detail{grid-template-columns:1fr;}.flowlog-page .fl-featured-journey ol{grid-template-columns:1fr 1fr;}.flowlog-page .p-facts-grid{grid-template-columns:1fr;}.flowlog-page .p-evidence-visual img{height:340px;}}
+@media(prefers-reduced-motion:reduce){.flowlog-page *{scroll-behavior:auto!important;}}
+
+/* Final FlowLog QA: featured guided original-SVG journey, same shared tokens. */
+.flowlog-page .fl-guided-intro{font-size:var(--type-body);line-height:var(--line-body);max-width:68ch;margin:12px 0 24px;}
+.flowlog-page .fl-guided-viewer{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.80fr);gap:clamp(18px,4vw,54px);border:1px solid var(--color-line);border-radius:var(--radius-card);background:var(--color-surface);padding:clamp(14px,3vw,32px);align-items:center;}
+.flowlog-page .fl-guided-visual{margin:0;min-width:0;background:#e8f0f7;border-radius:var(--radius-card);padding:clamp(14px,3vw,28px);text-align:center;}
+.flowlog-page .fl-guided-visual img{display:block;width:100%;height:min(54vh,540px);object-fit:contain;}
+.flowlog-page .fl-guided-visual figcaption{font-size:var(--type-label);line-height:1.6;color:var(--color-blue-ink);margin-top:10px;}
+.flowlog-page .fl-guided-info h3{font-size:var(--type-card);margin:0 0 12px;}
+.flowlog-page .fl-guided-description{font-size:var(--type-body);line-height:var(--line-body);color:var(--color-body);}
+.flowlog-page .fl-guided-controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.flowlog-page .fl-guided-controls button,.flowlog-page .fl-guided-steps button{font:500 var(--type-small) var(--font-body);border:1px solid var(--color-line);border-radius:var(--radius-card);background:var(--color-surface);color:var(--color-heading);padding:11px 14px;cursor:pointer;}
+.flowlog-page .fl-guided-controls button:hover,.flowlog-page .fl-guided-steps button:hover,.flowlog-page .fl-guided-steps button[aria-current="step"]{border-color:var(--color-blue-ink);background:#e9f1f7;}
+.flowlog-page .fl-guided-controls button:focus-visible,.flowlog-page .fl-guided-steps button:focus-visible{outline:3px solid var(--color-blue-ink);outline-offset:3px;}
+.flowlog-page .fl-guided-controls button:disabled{opacity:.45;cursor:not-allowed;}
+.flowlog-page .fl-guided-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:0;margin:14px 0 20px;}
+.flowlog-page .fl-guided-steps li{padding:0;border:0;background:transparent;min-width:0;}
+.flowlog-page .fl-guided-steps li::before{display:none;}
+.flowlog-page .fl-guided-steps button{width:100%;min-height:55px;text-align:left;}
+@media(max-width:790px){.flowlog-page .fl-guided-viewer{grid-template-columns:1fr;}.flowlog-page .fl-guided-steps{grid-template-columns:repeat(2,minmax(0,1fr));}.flowlog-page .fl-guided-visual img{height:min(55vh,430px);}}
+@media(max-width:390px){.flowlog-page .fl-guided-controls button{padding:10px 9px;}.flowlog-page .fl-guided-steps button{padding:9px;font-size:var(--type-label);}}
