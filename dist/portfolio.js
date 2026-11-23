@@ -1,6 +1,17 @@
 const dialog = document.querySelector(".detail-dialog");
 const detailContent = document.querySelector("#detail-content");
 
+function openResumeFromLink(event) {
+  if (event) event.preventDefault();
+  const template = document.getElementById("resume");
+  detailContent.replaceChildren(template.content.cloneNode(true));
+  if (!dialog.open) dialog.showModal();
+  dialog.scrollTop = 0;
+}
+
+document.querySelector('a[href="#resume"]')?.addEventListener("click", openResumeFromLink);
+if (location.hash === "#resume") openResumeFromLink();
+
 for (const button of document.querySelectorAll("[data-detail]")) {
   button.addEventListener("click", () => {
     const template = document.getElementById(button.dataset.detail);

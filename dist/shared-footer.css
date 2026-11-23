@@ -30,13 +30,13 @@
   .footer .content-width { width: calc(100% - 44px); }
   .footer-ornament { display: none; }
   .footer-body { margin-bottom: 60px; }
-  .footer h2 { font-size: 68px !important; }
+  .footer h2 { font-size: 36px !important; }
 }
 @media (max-width: 560px) {
   .footer { min-height: 510px; }
   .footer .content-width { width: calc(100% - 34px); }
   .footer-inner { padding-top: 60px; }
-  .footer h2 { font-size: clamp(56px,12vw,76px) !important; }
+  .footer h2 { font-size: min(36px,9.2vw) !important; }
   .footer-copy>p { font-size: 13px; }
   .footer .button { min-height: 41px; padding: 11px 19px; font-size: 11px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 22px; }

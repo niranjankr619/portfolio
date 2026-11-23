@@ -7,50 +7,36 @@
 <meta content="#0d281f" name="theme-color"/>
 <meta content="FlowLog mobile product design case study: delegated work requests, time capture, optional evidence, approvals and AI-assisted prototyping." name="description"/>
 <title>FlowLog — Mobile Product Design Case Study | Niranjan Raghavan</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+
+
+
 <link href="../../design-system.css" rel="stylesheet"/>
 <link href="../../site.css" rel="stylesheet"/>
 <link href="../../flowlog-matched.css" rel="stylesheet"/>
 <script defer="" src="../../site.js">
 </script>
-<link href="../../unified.css" rel="stylesheet"/><link href="../../case-home-footer.css" rel="stylesheet"/></head>
+<link href="../../unified.css" rel="stylesheet"/><link href="../../shared-system.css" rel="stylesheet"/>
+<link href="../../shared-footer.css" rel="stylesheet"/>
+<script defer src="../../shared-nav.js"></script>
+</head>
 <body data-project="flowlog">
 <a class="skip-link" href="#main">
    Skip to content
   </a>
-<header class="site-header">
-<nav aria-label="Main navigation" class="nav-shell container">
-<a aria-label="Niranjan Raghavan home" class="brand" href="../../index.html">
-     NR.
-    </a>
-<span aria-hidden="true" class="nav-rule">
-</span>
-<div class="nav-links" id="site-nav">
-<a href="../../index.html">
-      Home
-     </a>
-<a aria-current="page" href="../../index.html#work">
-      Work
-     </a>
-<a href="../../index.html#approach">
-      Approach
-     </a>
-<a href="../../index.html#about">
-      About
-     </a>
-</div>
-<a class="nav-contact" href="mailto:niranjankr619@gmail.com?subject=Product%20design%20opportunity">
-     Let's talk
-     <span aria-hidden="true">
-      ↗
-     </span>
-</a>
-<button aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button">
-     ☰
-    </button>
-</nav>
+<header class="site-header system-header shell">
+  <a class="wordmark" href="../../index.html#home" aria-label="Niranjan Raghavan, home"><span>N</span><i>R</i></a>
+  <span class="header-rule" aria-hidden="true"></span>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="header-menu" aria-label="Open navigation"><span></span><span></span><span></span></button>
+  <div class="header-menu" id="header-menu">
+    <nav class="navigation" aria-label="Main navigation">
+      <a href="../../index.html#home">Home</a>
+      <a href="../../index.html#work" aria-current="page">Work</a>
+      <a href="../../index.html#process">Process</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#resume">Résumé</a>
+    </nav>
+    <a class="pill pill-outline nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+  </div>
 </header>
 <main class="case-page case-blue flowlog-page portfolio-unified" data-project="flowlog" id="main"><section class="p-intro" id="overview"><div class="container p-intro-grid"><div class="p-intro-main"><div class="p-kicker">FLOWLOG <span>/</span> MOBILE PRODUCT DESIGN · UX/UI · WORKFLOW DESIGN</div><h1 id="fl-main-heading">A time tracker that reveals the work <em>behind every hour.</em></h1><div class="p-intro-description"><p>Recording how long someone worked is only part of understanding their contribution.</p><p>The organisation already had a time-tracking feature in its VPN-connected web portal. My initial brief was to design a standalone mobile experience that made logging time more accessible.</p><p>But while exploring how employees selected work to track, I identified another gap: contributors sometimes requested work from another Work Owner through a phone call, leaving no digital record of how that delegated work began.</p><p>I proposed extending the mobile experience beyond time capture to connect <strong>requests, assignments, recorded hours, optional evidence and completion reviews</strong>.</p></div></div><div class="p-intro-question"><p class="p-overline">CORE DESIGN CHALLENGE</p><p>How might we make daily time tracking convenient while keeping delegated work accountable, without introducing unnecessary reporting effort?</p><div class="p-intro-tags"><span>Mobile UX/UI</span><span>Workflow design</span><span>October 2025</span></div></div></div></section><figure class="p-cover"><img alt="Approved powder-blue architectural FlowLog cover with Timer and Approval Centre mobile mockups" fetchpriority="high" src="../../assets/unified/flowlog-approved-cover.png"/><figcaption>02 / APPROVED EDITORIAL COVER <span>Original SVG product evidence follows below</span></figcaption></figure><section aria-label="Project facts" class="p-facts"><div class="container"><div class="p-facts-index">03 / PROJECT FACTS</div><div class="p-facts-grid"><div><span class="p-overline">MY ROLE</span><strong>UX/UI Designer — end-to-end feature design</strong></div><div><span class="p-overline">DESIGN PERIOD</span><strong>October 2025 · Approximately two weeks</strong></div><div><span class="p-overline">PRODUCT</span><strong>Internal mobile time-tracking and delegated-work application</strong></div><div><span class="p-overline">DELIVERY</span><strong>Internal Play Store release after approximately two months of development</strong></div></div><div class="fl-facts-detail"><div><strong>Collaboration</strong><p>Manager, colleagues, Managing Director and internal development team</p></div><div><strong>My contribution</strong><p>Mobile UX/UI, work-delegation flows, time mapping, supporting screens and AI-assisted prototype handoff</p></div><div><strong>My involvement</strong><p>I worked on the mobile product experience from workflow exploration through interface design and prototype handoff. I discussed the proposed capability with colleagues, designed the screens and interaction states, reviewed a working prototype with my manager and four colleagues, and refined the experience based on feedback.</p><p>I used Figma Make and AI-assisted prototyping to create a React-based frontend for handoff. The internal development team implemented the released application.</p></div></div></div></section><section class="p-story" id="story"><div class="container"><div class="p-section-number">04 / ILLUSTRATED PROBLEM STORY</div><div class="p-section-heading"><h2>The timer was the starting point. <em>The workflow was the real challenge.</em></h2><p>A time entry becomes more meaningful when it can be connected to the work that was requested, performed and reviewed.</p></div><div class="fl-scene-grid"><article class="story-scene"><img alt="Conceptual illustration scene 1: Work begins with a request" loading="lazy" src="../../assets/unified/flowlog-scene-1.webp"/><div class="caption"><span>01 / HUMAN WORKFLOW</span><h3>Work begins with a request</h3><p>A contributor might receive delegated work or ask another Work Owner to assign it. Before FlowLog, that request could happen over a phone call without a recorded trail.</p></div></article><article class="story-scene"><img alt="Conceptual illustration scene 2: Time needs context" loading="lazy" src="../../assets/unified/flowlog-scene-2.webp"/><div class="caption"><span>02 / HUMAN WORKFLOW</span><h3>Time needs context</h3><p>Employees need to record time against the relevant Work Order, Sub Work Order or general activity rather than saving disconnected hours.</p></div></article><article class="story-scene"><img alt="Conceptual illustration scene 3: Progress needs visibility" loading="lazy" src="../../assets/unified/flowlog-scene-3.webp"/><div class="caption"><span>03 / HUMAN WORKFLOW</span><h3>Progress needs visibility</h3><p>The person performing the work and the person responsible for it need a shared understanding of scope, recorded time and supporting evidence.</p></div></article><article class="story-scene"><img alt="Conceptual illustration scene 4: Completion needs a decision" loading="lazy" src="../../assets/unified/flowlog-scene-4.webp"/><div class="caption"><span>04 / HUMAN WORKFLOW</span><h3>Completion needs a decision</h3><p>Logging time does not automatically mean the assignment is complete. The contributor requests closure, and the Work Owner reviews the work before making a decision.</p></div></article></div><p class="p-story-disclaimer">These illustrations are conceptual storytelling assets, not representations of actual research sessions or product screenshots.</p></div></section><section class="p-brief p-section" id="brief"><div class="container"><div class="p-section-number">05 / PROJECT BRIEF</div><div class="p-section-heading"><h2>From logging time to <em>understanding the work.</em></h2><p>The original requirement was straightforward: make an existing web-based time tracker available through a standalone mobile application. But exploring the complete task revealed that employees needed more than an accessible timer.</p></div><div class="p-brief-grid"><div><div class="p-question"><span>01</span><div><h3>What I discovered</h3><p>Sub Work Orders were already part of the organisation's working model. Work Owners could assign delegated work, but contributors sometimes contacted another owner by phone to request an assignment. That conversation was not necessarily recorded within the system.</p></div></div><div class="p-question"><span>02</span><div><h3>Discovery input</h3><p>I held an internal group discussion with 20 colleagues about recording delegated-work requests. <strong>18 of 20 colleagues considered the capability a must-have.</strong> The remaining two considered it a could-have. This supported my recommendation to include registered requests in the mobile application.</p><p>This was discovery input for prioritisation, not independent usability testing or evidence of improved performance.</p></div></div><div class="p-question"><span>03</span><div><h3>Two roles, different responsibilities</h3><p><strong>Work Owner:</strong> Owns the parent Work Order, assigns or reviews delegated work, monitors time and evidence, and reviews completion requests.</p><p><strong>Contributor / Delegate:</strong> Receives or requests scoped work, records time, optionally submits evidence and requests closure when the overall work is ready.</p></div></div></div><div class="p-decision-evidence"><figure class="p-evidence-media fl-ui-figure"><div class="p-evidence-visual"><button aria-label="Zoom Mobile timer" class="fl-image-button" data-zoom-alt="Mobile timer" data-zoom-src="../../assets/flowlog-original/dashboard-2.svg" type="button"><img alt="Original FlowLog UI: Mobile timer" loading="lazy" src="../../assets/flowlog-original/dashboard-2.svg"/></button></div><figcaption class="p-evidence-caption"><span><strong>Mobile timer</strong><small>Original FlowLog SVG export</small></span><button class="zoom-button" data-zoom-alt="Mobile timer" data-zoom-src="../../assets/flowlog-original/dashboard-2.svg" type="button">Zoom ↗</button></figcaption></figure><figure class="p-evidence-media fl-ui-figure"><div class="p-evidence-visual"><button aria-label="Zoom Contributor request" class="fl-image-button" data-zoom-alt="Contributor request" data-zoom-src="../../assets/flowlog-original/requesting-sub-work-order-screen.svg" type="button"><img alt="Original FlowLog UI: Contributor request" loading="lazy" src="../../assets/flowlog-original/requesting-sub-work-order-screen.svg"/></button></div><figcaption class="p-evidence-caption"><span><strong>Contributor request</strong><small>Original FlowLog SVG export</small></span><button class="zoom-button" data-zoom-alt="Contributor request" data-zoom-src="../../assets/flowlog-original/requesting-sub-work-order-screen.svg" type="button">Zoom ↗</button></figcaption></figure></div></div><div class="p-brief-insight"><p><strong>The key UX problem:</strong> The product needed to connect two different moments: recording activity and being accountable for assigned work. A timer alone could solve the first problem. It could not explain how work was requested, who owned it, what evidence was available or who needed to act next.</p><p class="fl-work-rail">Parent Work Order → Sub Work Order → Time entries → Optional evidence → Owner review → Closure</p></div></div></section><section class="p-chapter-header"><div class="container"><div class="p-section-number">06 / DESIGN DECISIONS &amp; EVIDENCE</div><div class="p-section-heading"><h2>Four choices behind a <em>connected mobile workflow.</em></h2><p>Each decision is grounded in the original FlowLog interface exports, with the problem, design response, UX reasoning and trade-off made explicit.</p></div></div></section><section class="p-decision p-section" id="entry-routes"><div class="container"><div class="p-section-number">06 / DESIGN DECISION 01</div><div class="p-decision-grid"><div class="p-decision-copy"><h2>Give delegated work <em>two entry routes.</em></h2><div class="p-decision-field"><p class="p-overline">THE PROBLEM</p><p>An owner could assign work directly, but a contributor requesting work from another owner depended on a conversation that might not be recorded.</p>
 <p>This created a gap between the work someone agreed to perform and the time they later logged against it.</p>
