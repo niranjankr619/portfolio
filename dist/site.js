@@ -28,11 +28,35 @@
   let items=[];try{items=JSON.parse(script.textContent)}catch(e){console.warn('Invalid explorer data',e);return}
   if(!items.length)return;
   const image=root.querySelector('.explorer-visual img');const visual=root.querySelector('.explorer-visual');const title=root.querySelector('.explorer-title');const desc=root.querySelector('.explorer-detail');const index=root.querySelector('.explorer-index');const group=root.querySelector('.explorer-group');const source=root.querySelector('.explorer-attribution');const count=root.closest('.explorer-section').querySelector('.explorer-count');const prev=root.querySelector('.explorer-prev');const next=root.querySelector('.explorer-next');const zoom=root.querySelector('.zoom-button');const filterBox=root.querySelector('.explorer-filter');
+  const picker = root.querySelector('.explorer-picker');
+  const preview = root.querySelector('.p-screen-scroll');
+  preview?.querySelector('img').addEventListener('click', () => zoom.click());
+  const populatePicker = () => {
+   if (picker) picker.replaceChildren(...filtered.map((item, i) => new Option(item.title, i)));
+  };
   const groups=['All',...new Set(items.map(it=>it.group))];let activeGroup='All';let filtered=items;let current=0;
-  const draw=()=>{const item=filtered[current];if(!item)return;image.src='../../'+item.src;image.alt=item.alt||item.title;title.textContent=item.title;desc.textContent=item.description;group.textContent=item.group;source.textContent=item.source||'Original supplied product screen. No artwork added to the interface.';index.textContent=String(current+1).padStart(2,'0')+' / '+String(filtered.length).padStart(2,'0')+' screens';count.textContent=items.length+' original views';prev.disabled=current===0;next.disabled=current===filtered.length-1;zoom.setAttribute('data-zoom-src','../../'+item.src);zoom.setAttribute('data-zoom-alt',item.alt||item.title);visual.classList.toggle('is-phone',item.orientation==='phone');visual.classList.toggle('is-wide',item.orientation!=='phone');};
-  groups.forEach(g=>{const b=document.createElement('button');b.type='button';b.textContent=g;b.setAttribute('aria-pressed',g===activeGroup?'true':'false');b.addEventListener('click',()=>{activeGroup=g;filtered=g==='All'?items:items.filter(it=>it.group===g);current=0;filterBox.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));draw()});filterBox.append(b)});
+  const draw=()=>{const item=filtered[current];if(!item)return;image.src='../../'+item.src;image.alt=item.alt||item.title;title.textContent=item.title;desc.textContent=item.description;if(group)group.textContent=item.group;if(source)source.textContent=item.source||'Original supplied product screen. No artwork added to the interface.';index.textContent=String(current+1).padStart(2,'0')+' / '+String(filtered.length).padStart(2,'0')+' screens';if(count)count.textContent=items.length+' original views';if(picker)picker.value=String(current);prev.disabled=current===0;next.disabled=current===filtered.length-1;if(preview)zoom.setAttribute('aria-label','Enlarge '+item.title);zoom.setAttribute('data-zoom-src','../../'+item.src);zoom.setAttribute('data-zoom-alt',item.alt||item.title);if(preview){
+   visual.classList.toggle('is-scrollable',Boolean(item.scrollPreview));
+   preview.scrollTop=0;
+   if(item.scrollPreview){
+    preview.tabIndex=0;
+    preview.setAttribute('role','region');
+    preview.setAttribute('aria-label',item.title+' preview, scroll for more');
+   }else{
+    preview.removeAttribute('tabindex');
+    preview.removeAttribute('role');
+    preview.removeAttribute('aria-label');
+   }
+  }
+  visual.classList.toggle('is-phone',item.orientation==='phone');visual.classList.toggle('is-wide',item.orientation!=='phone');};
+  groups.forEach(g=>{const b=document.createElement('button');b.type='button';b.textContent=g;b.setAttribute('aria-pressed',g===activeGroup?'true':'false');b.addEventListener('click',()=>{activeGroup=g;filtered=g==='All'?items:items.filter(it=>it.group===g);current=0;populatePicker();filterBox.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));draw()});filterBox.append(b)});
   prev.addEventListener('click',()=>{current=Math.max(0,current-1);draw()});next.addEventListener('click',()=>{current=Math.min(filtered.length-1,current+1);draw()});
-  root.addEventListener('keydown',event=>{if(!root.contains(document.activeElement))return;if(event.key==='ArrowRight'&&current<filtered.length-1){current++;draw()}if(event.key==='ArrowLeft'&&current>0){current--;draw()}});
+  root.addEventListener('keydown',event=>{if(event.target===picker||!root.contains(document.activeElement))return;if(event.key==='ArrowRight'&&current<filtered.length-1){current++;draw()}if(event.key==='ArrowLeft'&&current>0){current--;draw()}});
+  picker?.addEventListener('change', () => {
+   current = Number(picker.value);
+   draw();
+  });
+  populatePicker();
   draw();
  });
  document.querySelectorAll('[data-story-carousel]').forEach(root=>{
