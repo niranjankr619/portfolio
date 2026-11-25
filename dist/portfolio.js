@@ -31,30 +31,6 @@ dialog.addEventListener("click", (event) => {
   if (outside) dialog.close();
 });
 
-const processPlay = document.querySelector(".project-play");
-const processPlayer = document.querySelector("#process-player");
-const processVideo = processPlayer.querySelector("video");
-const processVideoClose = processPlayer.querySelector(".project-video-close");
-const processCoverLink = processPlay.closest(".project").querySelector(".project-link");
-
-processPlay.addEventListener("click", () => {
-  processPlayer.hidden = false;
-  processPlay.hidden = true;
-  processCoverLink.inert = true;
-  processVideoClose.focus({ preventScroll: true });
-  processVideo.play().catch(() => {
-    // Native controls remain available when the browser blocks playback.
-  });
-});
-
-processVideoClose.addEventListener("click", () => {
-  processVideo.pause();
-  processPlayer.hidden = true;
-  processPlay.hidden = false;
-  processCoverLink.inert = false;
-  processPlay.focus({ preventScroll: true });
-});
-
 const navLinks = [...document.querySelectorAll(".navigation a")];
 const menuToggle = document.querySelector(".menu-toggle");
 const headerMenu = document.querySelector("#header-menu");

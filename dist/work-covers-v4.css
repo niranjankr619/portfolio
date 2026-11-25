@@ -58,6 +58,7 @@
   aspect-ratio: 3 / 2;
   background: #e1e8df;
 }
+.work .work-picture picture { display: block; width: 100%; height: 100%; }
 .work .work-picture img {
   display: block;
   width: 100%;
