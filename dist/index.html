@@ -7,13 +7,14 @@
   <meta name="description" content="Selected work, design process, and background for product designer Niranjan Raghavan.">
   <title>Niranjan Raghavan | Product Designer</title>
   <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/portfolio/hero.png" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/portfolio/hero-coastal-arch.png" as="image" fetchpriority="high">
   <link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="reference-sections.css">
   <link rel="stylesheet" href="shared-system.css">
   <link rel="stylesheet" href="shared-footer.css">
   <script src="portfolio.js" defer></script>
+  <script src="about-scroll.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,8 +36,8 @@
     </header>
     <main id="main" tabindex="-1">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-gallery" role="img" aria-label="Graphite portrait of Niranjan Raghavan in an engraved landscape with a stone arch.">
-          <img class="hero-mobile-scene" src="assets/portfolio/hero.png" alt="" width="1916" height="821">
+        <div class="hero-gallery" role="img" aria-label="Niranjan Raghavan holding a laptop beside a coastal stone arch.">
+          <img class="hero-mobile-scene" src="assets/portfolio/hero-coastal-arch.png" alt="" width="1672" height="941">
         </div>
         <div class="hero-copy shell">
           <h1 id="hero-title">Product Designer<br>crafting <em>useful,<br>connected products.</em></h1>
@@ -129,8 +130,12 @@
 </section>
 
       <section aria-labelledby="about-title" class="about-section" id="about">
-<div class="content-width about-inner"><div class="about-art"><img alt="Approved graphite illustration of Niranjan with architectural plans, books and design objects" height="1086" loading="lazy" src="assets/home/about_approved_unchanged.png" width="1448"/></div><div class="about-content"><div class="section-kicker"><span class="eyebrow">03 / ABOUT ME</span><span class="kicker-rule"></span></div><h2 id="about-title">Before interfaces,<br/><em>there was a home.</em></h2><p>I studied commerce, and my path to product design wasn't a straight line. While supporting my family and helping plan our home, I became fascinated by how spaces, systems and decisions shape people's everyday experiences.</p><p>That curiosity eventually led me to UI/UX design. Today, I work at the intersection of user needs, business thinking and connected digital workflows.</p><button class="text-link" type="button" data-detail="story">Read my story <span aria-hidden="true">↗</span></button></div></div>
-</section>
+        <div class="content-width about-content">
+          <h2 id="about-title">Before interfaces,<br>there was a home.</h2>
+          <p>I studied commerce. While supporting my family and helping plan our home, I saw how small choices about space could change the way we lived every day. That experience drew me to UI/UX design.</p>
+          <p>Today, I bring that same thinking to digital products. I connect what people need with what the business can support, then work through the details that make a complex workflow easier to use.</p>
+        </div>
+      </section>
 
     </main>
     <footer aria-labelledby="footer-title" class="footer" id="contact"><div aria-hidden="true" class="footer-backdrop"></div><div class="content-width footer-inner"><span class="eyebrow footer-overline">OPEN TO FULL-TIME ROLES / 2026</span><div class="footer-body"><div class="footer-copy"><h2 id="footer-title">Open to <em>full-time</em><br/>opportunities.</h2><p>I'm looking to join a product team where I can simplify complex systems and craft meaningful experiences together.</p><div class="footer-buttons"><a class="button button-gold" href="mailto:niranjankr619@gmail.com?subject=Full-time%20design%20opportunity">Get in touch <span aria-hidden="true">↗</span></a><a class="button button-line" href="#work">View my work <span aria-hidden="true">↗</span></a></div></div><div aria-hidden="true" class="footer-ornament"><span>✳</span><i></i></div></div><div class="footer-rule"></div><div class="footer-bottom"><span>© 2026 Niranjan Raghavan</span><div><a href="#work">Projects</a><a href="#about">About</a><a href="mailto:niranjankr619@gmail.com">Email</a></div></div></div></footer>
@@ -152,11 +157,6 @@
     <h2 id="detail-title">Deziners Knot</h2>
     <p>Designing decisions between two parties.</p>
     <img class="detail-image detail-phone" src="assets/screens/deziners-knot.png" alt="Deziners Knot sign-in screen." width="510" height="1112">
-  </template>
-  <template id="story">
-    <p class="kicker">About me</p>
-    <h2 id="detail-title">From commerce to <em>product design.</em></h2>
-    <p>My journey began in commerce, where I built a foundation in business and systems. That curiosity led me to design, where I combine analytical thinking, problem solving, and creativity to build useful products for real people.</p>
   </template>
   <template id="resume">
     <p class="kicker">Résumé overview</p>
