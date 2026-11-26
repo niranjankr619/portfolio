@@ -1,25 +1,45 @@
 /* Shared contact close — the supplied coast artwork is the scene, not an overlay. */
 .footer, .footer * { box-sizing: border-box; }
+.hero .pill-solid,
+.footer .footer-buttons .button-gold {
+  color: #fffaf0;
+  border-color: var(--contact-olive);
+  background: var(--contact-olive);
+}
+.hero .pill-outline,
+.footer .footer-buttons .button-line {
+  color: var(--contact-olive);
+  border-color: var(--contact-olive);
+  background: #fffaf0;
+}
+.hero .pill:is(:hover, :focus-visible),
+.footer .footer-buttons .button:is(:hover, :focus-visible) {
+  color: #fffaf0;
+  border-color: #555d44;
+  background: #555d44;
+}
+:root { --contact-olive: #353d2a; }
 .footer {
   --footer-art: url('assets/home/footer-sunrise.png');
   --footer-bar-height: 56px;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: calc(max(490px, 56.28vw) + var(--footer-bar-height));
+  --footer-scene-height: min(max(490px, 56.28vw), calc(100svh - var(--nav-height, 74px) - var(--footer-bar-height) - 12px));
+  min-height: calc(var(--footer-scene-height) + var(--footer-bar-height));
   background: #f4f1f3;
   color: #14372b;
   font-family: 'DM Sans', sans-serif;
 }
-.footer .content-width { width: min(1340px, calc(100% - 110px)); margin-inline: auto; }
+.footer .content-width { width: min(1340px, calc(100% - 88px), calc(var(--footer-scene-height) * 1.776 - 48px)); margin-inline: auto; }
 .footer-backdrop {
   position: absolute;
   z-index: -1;
   inset: 0 0 var(--footer-bar-height);
-  background: var(--footer-art) center top / cover no-repeat;
+  background: var(--footer-art) center top / contain no-repeat;
   opacity: 1;
 }
-.footer-inner { position: relative; min-height: inherit; padding-top: clamp(44px, 6vw, 126px); display: flex; flex-direction: column; }
+.footer-inner { position: relative; min-height: inherit; padding-top: clamp(30px, 6svh, 76px); display: flex; flex-direction: column; }
 .footer .eyebrow { font: 600 11px/1.45 'DM Sans', sans-serif; letter-spacing: .12em; }
 .footer-overline { display: block; margin-left: 53%; color: #1b4a39; }
 .footer-body { display: block; width: 47%; margin: 18px 0 36px 53%; }
@@ -30,10 +50,6 @@
 .footer-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 .footer .button { display: inline-flex; align-items: center; justify-content: center; gap: 21px; min-height: 52px; padding: 13px 28px; border: 1px solid #174534; border-radius: 999px; color: #14372b; background: transparent; font: 700 13px/1.4 'DM Sans', sans-serif; text-decoration: none; transition: transform .18s ease, background .18s ease, color .18s ease; }
 .footer .button:hover { transform: translateY(-2px); }
-.footer .button-gold { background: #164535; border-color: #164535; color: #fffaf0; }
-.footer .button-line { background: #f4f1f3; }
-.footer .button-gold:hover { background: #285d48; }
-.footer .button-line:hover { color: #fffaf0; background: #164535; }
 .footer-ornament { display: none; }
 .footer-rule { width: 100%; height: 1px; margin-top: auto; background: rgba(244,237,222,.5); }
 .footer-bottom { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 40px; min-height: var(--footer-bar-height); padding: 12px 0; color: #14372b; font: 13px 'DM Sans', sans-serif; }
@@ -52,9 +68,9 @@
     content: '';
     display: block;
     width: 100vw;
-    height: clamp(260px, 56vw, 510px);
+    aspect-ratio: 1672 / 941;
     margin: 24px 0 0 calc(50% - 50vw);
-    background: var(--footer-art) 25% center / cover no-repeat;
+    background: var(--footer-art) center / contain no-repeat;
   }
   .footer h2 { font-size: clamp(42px, 8vw, 62px) !important; }
   .footer-copy > p { font-size: 16px; }
@@ -63,6 +79,6 @@
   .footer .content-width { width: calc(100% - 34px); }
   .footer .eyebrow { font-size: 10px; }
   .footer .button { min-height: 44px; padding: 10px 18px; font-size: 11px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .footer-bottom div { gap: 20px; }
+  .footer-bottom { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; font-size: 12px; }
+  .footer-bottom div { gap: 14px; }
 }

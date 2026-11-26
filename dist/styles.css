@@ -108,9 +108,13 @@ img { display: block; max-width: 100%; height: auto; }
 .hero-gallery::after { display: none; }
 .hero-mobile-scene { display: none; }
 .hero-copy { position: relative; padding-block: clamp(1.15rem, 2.15vw, 2.75rem) 1.85rem; }
+@media (min-width: 52.01rem) {
+  .hero-copy { margin-top: clamp(-136px, -11svh, -60px); }
+}
 .kicker { font: 650 var(--label-size)/1.35 var(--sans); letter-spacing: .155em; text-transform: uppercase; }
 .hero h1 { max-width: max-content; font-size: var(--display); line-height: .91; letter-spacing: -.011em; }
-.hero em, .contact em { color: var(--brass); }
+.hero em { color: var(--brass-ink); }
+.contact em { color: var(--brass); }
 .hero-lead { max-width: min(29rem, 42%); margin-top: .88rem; color: #31483b; font-size: clamp(1.025rem, 1.18vw, 1.15rem); line-height: 1.5; }
 .hero .pill-outline { color: #19372b; background: rgb(255 255 255 / 72%); }
 .hero .disciplines { border-top-color: #b58c4f; color: #31483b; }

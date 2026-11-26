@@ -1,0 +1,319 @@
+/* Shared portfolio frame with Dezinersknot's own narrative chapters. */
+.process-page[data-project="dezinersknot"] {
+  --dk-ink: #242424;
+  --dk-rule: #dedede;
+  --dk-paper: #fff;
+}
+[data-project="dezinersknot"] .p-intro-grid { align-items: center; }
+[data-project="dezinersknot"] .p-cover img {
+  display: block;
+  height: auto;
+}
+[data-project="dezinersknot"] .dk-chapter { background: #fff; }
+[data-project="dezinersknot"] :is(#business-rules, #delivery) { background: #f7f7f6; }
+[data-project="dezinersknot"] .dk-chapter h2 {
+  max-width: 20ch;
+  margin: 24px 0 clamp(24px, 4vw, 48px);
+}
+[data-project="dezinersknot"] .dk-chapter-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(24px, 6vw, 84px);
+}
+[data-project="dezinersknot"] .dk-narrative { max-width: 60ch; }
+[data-project="dezinersknot"] .dk-narrative p { margin: 0 0 1em; }
+[data-project="dezinersknot"] .dk-narrative p:last-child { margin-bottom: 0; }
+[data-project="dezinersknot"] .dk-lead {
+  color: var(--color-heading);
+  font-size: var(--type-lead);
+}
+[data-project="dezinersknot"] .dk-evidence-note {
+  max-width: 74ch;
+  margin: clamp(24px, 4vw, 44px) 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--dk-rule);
+  color: var(--color-body);
+}
+[data-project="dezinersknot"] .dk-evidence-note strong { color: var(--color-heading); }
+[data-project="dezinersknot"] .dk-contract-illustration { margin: 24px 0 0; }
+[data-project="dezinersknot"] .dk-contract-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+[data-project="dezinersknot"] .dk-contract-illustration figcaption {
+  margin-top: 10px;
+  color: var(--color-body);
+  font-size: var(--type-small);
+}
+[data-project="dezinersknot"] .dk-contract-flow {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 14px 18px 14px 38px;
+  background: #f6efe1;
+  border-inline-start: 2px solid #97805a;
+  color: var(--dk-ink);
+}
+[data-project="dezinersknot"] .dk-evidence-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  align-items: start;
+  gap: 24px;
+}
+[data-project="dezinersknot"] .dk-evidence {
+  margin: 0;
+  padding: clamp(18px, 2.5vw, 32px);
+  border: 1px solid var(--dk-rule);
+  border-radius: 6px;
+  background: var(--dk-paper);
+  color: var(--dk-ink);
+}
+[data-project="dezinersknot"] #brief .dk-workflow {
+  margin-top: clamp(20px, 3vw, 36px);
+  padding: clamp(20px, 4vw, 52px);
+  background: #232323;
+  border-color: var(--brief-rule);
+  --dk-ink: var(--brief-ink);
+}
+[data-project="dezinersknot"] #brief .dk-workflow h3 {
+  color: var(--dk-ink);
+  text-align: center;
+  font-size: clamp(2rem, 4.5vw, 4rem) !important;
+  margin-bottom: clamp(20px, 3vw, 40px);
+}
+[data-project="dezinersknot"] #brief .dk-workflow figcaption {
+  max-width: 54ch;
+  margin-inline: auto;
+  color: var(--brief-muted);
+  text-align: center;
+}
+[data-project="dezinersknot"] .dk-evidence h3 { margin: 0 0 16px; }
+[data-project="dezinersknot"] .dk-chapter .dk-evidence-group { grid-template-columns: 1fr; }
+[data-project="dezinersknot"] .dk-chapter .dk-evidence {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+[data-project="dezinersknot"] .dk-chapter .dk-evidence h3 {
+  font: 650 var(--type-body)/1.4 var(--font-body);
+  font-size: var(--type-body) !important;
+}
+[data-project="dezinersknot"] .dk-evidence figcaption {
+  margin-top: 16px;
+  color: inherit;
+  font-size: var(--type-small);
+  line-height: 1.5;
+}
+[data-project="dezinersknot"] .dk-record { margin: 0; }
+[data-project="dezinersknot"] .dk-record > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 8px 20px;
+  padding: 12px 0;
+  border-top: 1px solid var(--dk-rule);
+}
+[data-project="dezinersknot"] .dk-record dt { font-weight: 650; }
+[data-project="dezinersknot"] .dk-record dd { margin: 0; }
+[data-project="dezinersknot"] .dk-sequence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style-position: inside;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+[data-project="dezinersknot"] .dk-sequence li {
+  border-top: 1px solid var(--dk-rule);
+  padding-top: 12px;
+  overflow-wrap: anywhere;
+}
+[data-project="dezinersknot"] .dk-sequence span { display: block; font-size: var(--type-small); }
+[data-project="dezinersknot"] .dk-sequence li::marker { font-size: var(--type-small); }
+.dk-journey-flow, .dk-payout-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dk-journey-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
+}
+.dk-journey-flow li {
+  position: relative;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--brief-rule);
+}
+.dk-journey-flow li + li::before {
+  content: "→" / "";
+  position: absolute;
+  inset-inline-start: -26px;
+  inset-block-start: 14px;
+  color: var(--color-gold);
+}
+.process-page #brief .dk-journey-flow h4 {
+  margin: 0 0 8px;
+  color: inherit;
+  font: 650 var(--type-body)/1.4 var(--font-body);
+}
+.process-page #brief .dk-journey-flow p { margin: 0; color: var(--brief-muted); font-size: var(--type-small); }
+.process-page #brief .dk-journey-flow strong { color: var(--brief-ink); }
+.dk-payment-choice { --dk-connector: #7d8a8d; }
+.dk-choice-origin {
+  max-width: max-content;
+  margin: 0 auto;
+  padding: 10px 16px;
+  background: #24343a;
+  color: #fff;
+  text-align: center;
+}
+.dk-choice-branches {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 30px 0 0;
+}
+.dk-choice-branches::before,
+.dk-choice-branches > div::before {
+  content: "";
+  position: absolute;
+  border-color: var(--dk-connector);
+  border-style: solid;
+}
+.dk-choice-branches::before {
+  inset: -30px 50% auto auto;
+  height: 15px;
+  border-width: 0 1px 0 0;
+}
+.dk-choice-branches > div {
+  padding: 14px;
+  background: #eaf1f4;
+  border-bottom: 2px solid #9eafb6;
+}
+.dk-choice-branches > div + div { background: #f6efe1; border-color: #ba9e73; }
+.dk-choice-branches > div::before {
+  inset-block-start: -15px;
+  width: calc(25% + 3px);
+  height: 15px;
+  border-width: 1px 0 0 1px;
+  inset-inline-start: calc(25% - 3px);
+}
+.dk-choice-branches > div + div::before {
+  inset-inline-start: 50%;
+  border-width: 1px 1px 0 0;
+}
+.dk-choice-branches dt { font-weight: 650; }
+.dk-choice-branches dd { margin: 4px 0 0; font-size: var(--type-small); }
+.dk-payout-flow {
+  display: grid;
+  gap: 8px;
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid #8b8b8b;
+}
+.dk-payout-flow li {
+  display: grid;
+  grid-template-columns: minmax(5.5rem, 1fr) minmax(0, 2.5fr);
+  gap: 8px;
+  padding: 8px 12px;
+}
+.dk-payout-flow li > span { font-size: var(--type-small); color: #535353; }
+.dk-payout-flow .dk-payout-gate { background: #eaf1f4; box-shadow: inset 3px 0 #5e7782; }
+.dk-credit-figure h4 { margin: 0 0 12px; }
+.dk-credit-figure .dk-payout-flow { border-color: var(--color-sage); }
+.dk-credit-figure .dk-payout-flow li {
+  position: relative;
+  grid-template-columns: minmax(8rem, 1fr) minmax(0, 2fr);
+}
+.dk-credit-figure .dk-payout-flow li::before {
+  position: absolute;
+  inset-block-start: 1em;
+  inset-inline-start: -20px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-sage-ink);
+  content: "";
+}
+.dk-credit-figure .dk-credit-recommendation {
+  background: var(--color-sage-tint);
+  box-shadow: inset 3px 0 var(--color-sage);
+}
+.dk-business-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(20px, 6vw, 84px);
+  margin-top: clamp(36px, 6vw, 76px);
+  padding-top: clamp(24px, 4vw, 48px);
+  border-top: 1px solid var(--dk-rule);
+}
+.dk-business-detail h3 { margin: 0 0 16px; }
+.dk-business-detail .dk-contract-illustration { margin: 0; }
+.dk-comparison { margin-top: 18px; }
+.dk-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin: 20px 0 10px;
+}
+.dk-metrics > div {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1 1 7rem;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--dk-rule);
+}
+.dk-metrics dt { font-size: var(--type-small); }
+.dk-metrics dd, .dk-uat-total strong, .dk-fee-table td {
+  margin: 0;
+  color: var(--dk-ink);
+  font: 400 clamp(2rem, 4vw, 3.5rem)/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.dk-uat-total strong { display: block; margin-bottom: 8px; }
+.dk-data-caption { margin-top: 12px !important; color: var(--color-body); font-size: var(--type-small); }
+.process-page[data-project="dezinersknot"] .dk-fees {
+  --dk-ink: #fcf6e8;
+  --dk-rule: #7c8062;
+  background-color: var(--color-brand);
+  color: var(--dk-ink);
+  text-align: center;
+}
+.process-page[data-project="dezinersknot"] .dk-fees h2 {
+  max-width: 20ch;
+  margin: 0 auto 20px;
+  color: var(--dk-ink);
+  text-wrap: balance;
+}
+.dk-fees header p { max-width: 62ch; margin: 0 auto; }
+.dk-fee-table {
+  width: min(100%, 50rem);
+  margin: clamp(24px, 4vw, 48px) auto 0;
+  border-collapse: collapse;
+}
+.dk-fee-table caption { padding-bottom: 12px; color: #e2ddc9; font-size: var(--type-small); }
+.dk-fee-table th, .dk-fee-table td { padding: 14px 6px; border-bottom: 1px solid var(--dk-rule); }
+.dk-fee-table tbody th { text-align: start; }
+.dk-fee-table th { font-size: var(--type-small); }
+.dk-fee-table thead td { font-size: inherit; }
+.dk-fee-table :is(th, td):last-child { color: #f8d394; }
+.dk-fees .dk-data-caption {
+  margin-inline: auto;
+  color: #e2ddc9;
+}
+@media (max-width: 800px) {
+  [data-project="dezinersknot"] .dk-chapter-body { grid-template-columns: minmax(0, 1fr); }
+  .dk-business-detail { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 550px) {
+  .dk-journey-flow { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .dk-journey-flow li + li::before { content: "↓" / ""; inset: -25px auto auto 0; }
+  .dk-payout-flow li, .dk-credit-figure .dk-payout-flow li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  [data-project="dezinersknot"] .dk-record > div { grid-template-columns: minmax(0, 1fr); }
+}

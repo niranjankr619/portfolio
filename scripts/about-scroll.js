@@ -4,9 +4,10 @@ const story = document.querySelector("#about .about-content");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (story && !reducedMotion.matches) {
+  const paragraphs = story.querySelectorAll("p");
   const words = [];
 
-  for (const element of story.querySelectorAll("h2, p")) {
+  for (const element of paragraphs) {
     for (const node of [...element.childNodes]) {
       if (node.nodeType !== Node.TEXT_NODE) continue;
 
@@ -28,9 +29,10 @@ if (story && !reducedMotion.matches) {
 
   let revealed = 0;
   scroll(() => {
-    const { top, height } = story.getBoundingClientRect();
+    const { top } = paragraphs[0].getBoundingClientRect();
+    const { bottom } = paragraphs[paragraphs.length - 1].getBoundingClientRect();
     const viewportHeight = document.documentElement.clientHeight;
-    const progress = Math.min(1, Math.max(0, (viewportHeight * .9 - top) / (height + viewportHeight * .22)));
+    const progress = Math.min(1, Math.max(0, (viewportHeight * .9 - top) / (bottom - top + viewportHeight * .22)));
     const next = Math.round(progress * words.length);
     while (revealed < next) words[revealed++].classList.add("is-read");
     while (revealed > next) words[--revealed].classList.remove("is-read");

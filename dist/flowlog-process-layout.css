@@ -1,0 +1,264 @@
+/* FlowLog follows the Process case-study reading frame. */
+.flowlog-page {
+  --case-gutter: clamp(48px, calc((100vw - 1024px) / 3 + 48px), 240px);
+  --case-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  --case-gap: clamp(16px, 4vw, 56px);
+  background: #fff;
+}
+.flowlog-page :is(.container, .p-cover) { width: calc(100% - 2 * var(--case-gutter)) !important; margin-inline: auto; }
+.flowlog-page .p-decision { padding-block: clamp(80px, 8vw, 120px); background: #fff; border-top: 1px solid #dedede; color: #242424; }
+.flowlog-page .p-decision:nth-of-type(even) { background: #fcfcfc; }
+.flowlog-page .p-decision-grid { display: grid; grid-template-columns: minmax(0, 1fr) !important; gap: clamp(40px, 5vw, 72px); }
+.flowlog-page .p-decision-copy { display: block; }
+.flowlog-page .p-decision-copy h2 { max-width: 890px; margin: 0 0 clamp(24px, 4vw, 48px); font-size: clamp(44px, 4.4vw, 64px); color: #242424; }
+.flowlog-page .p-decision-copy h2 em { color: inherit; }
+.flowlog-page .p-decision-field, .flowlog-page .p-decision-note { display: grid; grid-template-columns: var(--case-columns); gap: 10px var(--case-gap); margin: 0; padding: clamp(20px, 3vw, 36px) 0; border: 0; border-top: 1px solid #dedede; background: transparent; }
+.flowlog-page .p-decision-field > :first-child, .flowlog-page .p-decision-note > :first-child { grid-column: 1; grid-row: 1 / span 20; margin: 0; color: #242424; text-transform: none; letter-spacing: normal; font: 400 var(--type-card)/1.05 var(--font-display); }
+.flowlog-page .p-decision-field > :not(:first-child), .flowlog-page .p-decision-note > :not(:first-child) { grid-column: 2; max-width: 65ch; margin: 0; color: #242424; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.55; }
+.flowlog-page .p-decision-evidence { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px; align-items: start; }
+.flowlog-page .p-decision .p-evidence-media { border: 0; background: transparent; }
+.flowlog-page .p-decision .p-evidence-visual { background: #f6f6f6; }
+.flowlog-page .p-decision .p-evidence-caption { padding: 14px 0 0; background: transparent; border: 0; }
+.flowlog-page .p-decision .p-evidence-caption small { display: none; }
+.flowlog-page :is(#brief, #outcome) { background: #171717; color: #f9f6ec; }
+.flowlog-page :is(#brief, #outcome) :is(h2, h2 em, h3, strong, .p-section-number, .p-overline) { color: #f9f6ec; }
+.flowlog-page :is(#brief, #outcome) p { color: #ddd9d1; }
+.flowlog-page #brief .p-section-heading, .flowlog-page #outcome .p-section-heading { display: block; max-width: 56rem; }
+.flowlog-page #brief .p-brief-grid { grid-template-columns: 1fr; gap: 40px; }
+.flowlog-page #brief .p-question { padding: 22px 0; border-top: 1px solid #52504c; }
+.flowlog-page #brief .p-question > div { display: grid; grid-template-columns: var(--case-columns); gap: 10px var(--case-gap); }
+.flowlog-page #brief .p-question > div > h3 { grid-column: 1; grid-row: 1 / span 10; }
+.flowlog-page #brief .p-question > div > p { grid-column: 2; margin: 0; font-size: clamp(1rem, 1.5vw, 1.25rem); }
+.flowlog-page #brief .p-decision-evidence { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.flowlog-page #brief .p-brief-insight { padding: clamp(22px, 4vw, 44px); background: #232323; border-top: 1px solid #c5a36b; }
+.flowlog-page #outcome .fl-outcome-grid { display: block; }
+.flowlog-page #outcome .fl-outcome-grid article { display: grid; grid-template-columns: var(--case-columns); gap: 10px var(--case-gap); padding: 24px 0; border-top: 1px solid #52504c; }
+.flowlog-page #outcome .fl-outcome-grid article > :first-child { grid-column: 1; grid-row: 1 / span 10; font: 400 var(--type-card)/1.05 var(--font-display); letter-spacing: normal; }
+.flowlog-page #outcome .fl-outcome-grid article > :not(:first-child) { grid-column: 2; margin: 0; }
+.flowlog-page #outcome .fl-reflection { color: #f9f6ec; border-top: 1px solid #c5a36b; }
+.flowlog-page .p-decision .p-section-number, .flowlog-page .p-decision .p-section-number span { color: #242424; }
+.flowlog-page .p-decision .p-evidence-caption .zoom-button { border: 0; background: transparent; color: #242424; padding: 0; text-decoration: underline; text-underline-offset: 4px; }
+.flowlog-page #brief .p-evidence-media, .flowlog-page #brief .p-evidence-caption { background: transparent; border-color: #52504c; }
+.flowlog-page #brief .p-evidence-caption strong, .flowlog-page #brief .zoom-button { color: #f9f6ec; }
+.flowlog-page #brief .p-evidence-visual { background: #232323; }
+.flowlog-page #brief .p-question > span { display: none; }
+.flowlog-page #outcome .fl-reflection h3, .flowlog-page #outcome .fl-reflection em { color: #f9f6ec; }
+.flowlog-page #outcome .fl-reflection { background: transparent; }
+.flowlog-page #screens .explorer-visual.is-phone .p-screen-scroll img { max-width: 100%; }
+.flowlog-page #screens .explorer-visual.is-phone .p-screen-scroll { display: flex; justify-content: center; }
+/* Override the old FlowLog card and narrow-column rules. */
+.flowlog-page #brief .p-question { display: block; }
+.flowlog-page #brief .p-question > div { min-width: 0; width: 100%; }
+.flowlog-page .p-decision .p-decision-field { max-width: none; }
+.flowlog-page #outcome .fl-outcome-grid article { background: transparent; border: 0; border-top: 1px solid #52504c; border-radius: 0; padding: 24px 0; }
+.flowlog-page #outcome .fl-outcome-grid article > :first-child { color: #f9f6ec; text-transform: none; }
+.flowlog-page #outcome .fl-outcome-grid article p { color: #ddd9d1; }
+.flowlog-page :is(.p-decision-field, #brief .p-question > div, #outcome .fl-outcome-grid article) > :first-child { grid-row: 1; }
+.flowlog-page #brief .p-evidence-caption .zoom-button { color: #f9f6ec; background: transparent; border-color: #8b8b8b; }
+.flowlog-page #brief .fl-work-rail { color: #f0ebe2; }
+.flowlog-page .p-decision .p-evidence-caption .fl-caption-description, .flowlog-page .p-evidence-caption .fl-caption-description { display: block; max-width: 48ch; margin-top: 5px; color: #56645c; font: 400 var(--type-small)/1.5 var(--font-body); overflow-wrap: normal; }
+.flowlog-page #brief .p-evidence-caption .fl-caption-description { color: #ddd9d1; }
+.flowlog-page #iteration { background: #fcfcfc; }
+.flowlog-page #iteration .p-decision-grid { grid-template-columns: 1fr !important; }
+.flowlog-page #iteration .p-decision-field, .flowlog-page #iteration .p-decision-note { max-width: none; display: grid; grid-template-columns: var(--case-columns); gap: 12px var(--case-gap); padding: clamp(20px, 3vw, 36px) 0; margin: 0; border: 0; border-top: 1px solid #dedede; background: transparent; }
+.flowlog-page #iteration .p-review-heading { margin: 0; color: #242424; font: 400 var(--type-card)/1.1 var(--font-display); }
+.flowlog-page #iteration :is(.p-decision-field, .p-decision-note) p { margin: 0; color: #242424; max-width: 65ch; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.55; }
+.flowlog-page #iteration .p-decision-evidence { display: grid; grid-template-columns: minmax(0, 420px); }
+.flowlog-page #iteration .p-evidence-media, .flowlog-page #iteration .p-evidence-caption { background: transparent; border: 0; }
+.flowlog-page #iteration .p-evidence-caption { padding-inline: 0; }
+.flowlog-page #outcome .fl-reflection { max-width: none; margin-top: clamp(48px, 6vw, 90px); padding: clamp(32px, 4vw, 56px) 0 0; }
+.flowlog-page #outcome .fl-reflection h3 { max-width: 30ch; font-size: clamp(2.3rem, 4vw, 4rem); line-height: 1.05; }
+.flowlog-page #outcome .fl-reflection p:not(.p-overline) { max-width: 72ch; font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.6; }
+.flowlog-page #outcome .fl-reflection p:last-child { margin-top: 32px; color: #e0bd83; font: italic clamp(1.6rem, 2.3vw, 2.3rem)/1.2 var(--font-display); }
+.flowlog-page #outcome .p-outcome-grid { display: block; }
+.flowlog-page #outcome .p-outcome-grid > div:first-child { max-width: 56rem; }
+.flowlog-page #outcome .p-outcome-details { margin-top: clamp(24px, 4vw, 44px); border-color: #52504c; }
+.flowlog-page #outcome .p-outcome-details > div { display: grid; grid-template-columns: var(--case-columns); gap: 8px var(--case-gap); padding: 16px 0; border-bottom: 1px solid #52504c; }
+.flowlog-page #outcome .p-outcome-details h3 { margin: 0; color: #f9f6ec; font-size: var(--type-card) !important; }
+.flowlog-page #outcome .p-outcome-details p { margin: 0; color: #ccc8c0; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.55; }
+.flowlog-page #outcome .p-final-line { max-width: none; margin-top: 38px; padding: clamp(22px, 4vw, 44px); border: 1px solid #52504c; border-top-color: var(--color-gold); background: #232323; color: #f9f6ec; font: 400 var(--type-h3)/1.15 var(--font-display); }
+.flowlog-page #outcome .p-final-line em { color: var(--color-gold); }
+.flowlog-page #brief .p-brief-insight { margin: clamp(24px, 4vw, 48px) 0; }
+@media (max-width: 800px) { .flowlog-page #outcome .p-outcome-details > div { grid-template-columns: 1fr; } }
+@media (max-width: 800px) { .flowlog-page #iteration :is(.p-decision-field, .p-decision-note) { grid-template-columns: 1fr; } }
+.flowlog-page .p-decision .p-decision-evidence { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 800px) { .flowlog-page .p-decision .p-decision-evidence { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .flowlog-page .p-decision .p-decision-evidence { grid-template-columns: 1fr; } }
+@media (max-width: 1023px) { .flowlog-page { --case-gutter: 28px; } }
+@media (max-width: 800px) {
+  .flowlog-page { --case-gutter: 20px; }
+  .flowlog-page :is(.p-decision-field, .p-decision-note, #brief .p-question > div, #outcome .fl-outcome-grid article) { grid-template-columns: minmax(0, 1fr); }
+  .flowlog-page :is(.p-decision-field, .p-decision-note, #brief .p-question > div, #outcome .fl-outcome-grid article) > * { grid-column: 1 !important; grid-row: auto !important; }
+  .flowlog-page #brief .p-decision-evidence { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* The explorer puts the interface and its explanation in one viewport. */
+.flowlog-page #screens {
+  background: #fcfcfc;
+}
+.flowlog-page #screens .explorer-filter {
+  flex-wrap: wrap;
+  margin: 0 0 24px;
+  border-bottom: 1px solid #dedede;
+}
+.flowlog-page #screens .explorer-filter button {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #444;
+  box-shadow: inset 0 -2px transparent;
+}
+.flowlog-page #screens .explorer-filter button[aria-pressed="true"] {
+  box-shadow: inset 0 -2px #242424;
+  color: #242424;
+}
+.flowlog-page #screens .explorer-layout {
+  grid-template-columns: minmax(0, 3fr) minmax(240px, 1fr);
+  grid-template-rows: clamp(440px, 30vw, 700px);
+  align-items: stretch;
+  gap: clamp(20px, 3vw, 48px);
+}
+.flowlog-page #screens .explorer-visual {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  background: #f3f3f3;
+}
+.flowlog-page #screens .p-screen-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+.flowlog-page #screens .p-screen-scroll img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+.flowlog-page #screens .is-scrollable .p-screen-scroll {
+  overflow-y: auto;
+}
+.flowlog-page #screens .is-scrollable .p-screen-scroll img {
+  height: auto;
+}
+.flowlog-page #screens .explorer-visual .p-expand-cue {
+  right: 12px;
+  bottom: 12px;
+  border: 0;
+  cursor: zoom-in;
+  pointer-events: auto;
+}
+.flowlog-page #screens .explorer-description {
+  min-height: 0;
+  overflow: auto;
+  padding: clamp(20px, 2vw, 32px);
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  background: transparent;
+}
+.flowlog-page #screens .p-screen-nav {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dedede;
+  font: 500 var(--type-small) var(--font-body);
+}
+.flowlog-page #screens .p-screen-picker {
+  position: relative;
+  min-width: 0;
+}
+.flowlog-page #screens .p-screen-picker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  width: 7px;
+  height: 7px;
+  border: solid var(--color-sage-ink);
+  border-width: 0 1.5px 1.5px 0;
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+.flowlog-page #screens .explorer-picker {
+  appearance: none;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 42px 10px 16px;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  background: #fff;
+  color: #242424;
+  font: inherit;
+}
+.flowlog-page #screens .explorer-picker:focus-visible {
+  outline: 2px solid var(--color-sage-ink);
+  outline-offset: 2px;
+}
+@supports (appearance: base-select) {
+  .flowlog-page #screens .explorer-picker,
+  .flowlog-page #screens .explorer-picker::picker(select) {
+    appearance: base-select;
+  }
+  .flowlog-page #screens .explorer-picker::picker-icon {
+    display: none;
+  }
+  .flowlog-page #screens .explorer-picker::picker(select) {
+    max-height: min(320px, 50vh);
+    margin-block-start: 4px;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: #fff;
+    color: #242424;
+  }
+  .flowlog-page #screens .explorer-picker option {
+    padding: 10px 16px;
+  }
+  .flowlog-page #screens .explorer-picker option:hover,
+  .flowlog-page #screens .explorer-picker option:focus-visible {
+    background: var(--color-sage-tint);
+    color: var(--color-sage-ink);
+  }
+}
+.flowlog-page #screens .explorer-controls {
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+.flowlog-page #screens .explorer-controls button {
+  flex: 0 0 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #242424;
+  font-size: 20px;
+}
+.flowlog-page #screens .explorer-controls button:disabled {
+  opacity: .4;
+}
+.flowlog-page #screens .explorer-index {
+  margin: 0;
+}
+.flowlog-page #screens .explorer-title {
+  margin: 28px 0 10px;
+  font-size: var(--type-card);
+}
+.flowlog-page #screens .explorer-detail {
+  margin: 0;
+  max-width: 30ch;
+  color: var(--color-muted);
+  font-size: var(--type-small);
+  line-height: 1.5;
+}
+@media (max-width: 800px) {
+  .flowlog-page #screens .explorer-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+  .flowlog-page #screens .explorer-visual {
+    height: clamp(175px, 48vw, 350px);
+  }
+}

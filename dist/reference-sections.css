@@ -39,6 +39,7 @@
   line-height: 1.55;
 }
 .about-section#about :is(h2, .about-content > p) { color: #141414; }
+.about-mobile-illustration { display: none; }
 .about-word {
   color: #737373;
   -webkit-text-stroke: 0 currentColor;
@@ -49,7 +50,14 @@
   -webkit-text-stroke-width: .024em;
 }
 @media (max-width: 700px) {
-  .about-section#about { background-position: center bottom; }
+  .about-section#about { background-image: none; }
+  .about-mobile-illustration {
+    display: block;
+    width: min(100%, 390px);
+    aspect-ratio: 4 / 3;
+    margin: 0 auto 24px;
+    background: url('assets/home/about_approved_unchanged.png') center / contain no-repeat;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .about-word { color: inherit; transition: none; }
