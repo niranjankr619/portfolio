@@ -1,18 +1,15 @@
 /* Shared contact close — the supplied coast artwork is the scene, not an overlay. */
 .footer, .footer * { box-sizing: border-box; }
-.hero .pill-solid,
 .footer .footer-buttons .button-gold {
   color: #fffaf0;
   border-color: var(--contact-olive);
   background: var(--contact-olive);
 }
-.hero .pill-outline,
 .footer .footer-buttons .button-line {
   color: var(--contact-olive);
   border-color: var(--contact-olive);
   background: #fffaf0;
 }
-.hero .pill:is(:hover, :focus-visible),
 .footer .footer-buttons .button:is(:hover, :focus-visible) {
   color: #fffaf0;
   border-color: #555d44;

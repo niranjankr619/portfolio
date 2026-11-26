@@ -160,6 +160,14 @@ html.menu-open { overflow: hidden; }
 @media (max-width: 52rem) {
   :root { --page-gutter: 20px; --nav-height: 72px; }
   .site-header.system-header { grid-template-columns: 1fr auto; gap: 12px; }
+  .site-header.system-header:has(.menu-toggle[aria-expanded="true"]) {
+    background: #fff;
+    border-bottom-color: var(--color-line);
+    color: var(--color-brand);
+  }
+  .system-header:has(.menu-toggle[aria-expanded="true"]) :is(.wordmark, .menu-toggle) {
+    color: var(--color-brand);
+  }
   .system-header .header-rule { display: none; }
   .system-header .menu-toggle {
     display: grid;
@@ -186,18 +194,25 @@ html.menu-open { overflow: hidden; }
     height: calc(100dvh - var(--nav-height));
     padding: 24px var(--page-gutter) 32px;
     overflow-y: auto;
-    border-top: 1px solid rgb(255 255 255 / 25%);
-    background: rgb(8 12 10 / 96%);
-    -webkit-backdrop-filter: blur(40px) saturate(80%);
-    backdrop-filter: blur(40px) saturate(80%);
-    color: var(--color-on-dark);
+    border-top: 1px solid var(--color-line);
+    background: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    color: var(--color-heading);
   }
   .system-header .menu-toggle[aria-expanded="true"] + .header-menu { display: grid; align-content: start; gap: 24px; }
   .system-header .navigation { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
   .system-header .navigation a { min-height: 58px; font-size: 16px; }
-  .system-header .navigation > * + * { border-top: 1px solid rgb(255 255 255 / 30%); }
+  .system-header .navigation > * + * { border-top: 1px solid var(--color-line); }
+  .system-header .header-menu .navigation a:is(:hover, [aria-current]) { color: #79521d; }
   .system-header .navigation a[aria-current]::after { right: auto; width: 32px; }
-  .system-header .nav-contact { justify-self: stretch; }
+  .system-header .header-menu .nav-contact {
+    justify-self: stretch;
+    color: var(--color-on-dark);
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+  }
+  .system-header .header-menu .nav-contact:hover { background: #254b3b; }
   .case-page :is(.container,.p-container,.dk-container),
   .process-page :is(.container,.p-container) { width: calc(100% - 2 * var(--page-gutter)); }
   .case-page .p-intro,
@@ -215,4 +230,11 @@ html.menu-open { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .system-header .menu-toggle span { transition: none; }
+}
+.ui-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.12em;
+  flex: none;
 }

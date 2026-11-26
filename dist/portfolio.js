@@ -92,7 +92,7 @@ skillPause.addEventListener("click", () => {
   skillsPaused = !skillsPaused;
   skillPause.setAttribute("aria-pressed", String(skillsPaused));
   skillPause.setAttribute("aria-label", skillsPaused ? "Resume automatic scrolling" : "Pause automatic scrolling");
-  skillPause.firstElementChild.textContent = skillsPaused ? "▷" : "Ⅱ";
+  skillPause.querySelector("path").setAttribute("d", skillsPaused ? "M9 5v14l11-7z" : "M9 5v14m6-14v14");
 });
 
 function scrollSkills(time) {
